@@ -4,68 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <title>Controle de Estoque</title>
 </head>
 <body>
-    <div>
-        <p>Roda Presa</p>
+    <div class="body">
+        <nav class="nav-bar">
+            <ul class="lista-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="ctrl-estoque.html">CONTROLE DE ESTOQUE</a></li>
+                <li><a href="add-produto.html">ADICIONAR PRODUTO</a></li>
+                <li><a href="funcionarios.html">FUNCIONÁRIOS</a></li>
+            </ul>
+        </nav>
+
+        <h1 class="font-logo">Roda Presa</h1>
+
+        <div class="div-tabela">
+            <h2>CONTROLE DE ESTOQUE</h2>
+            <table class="tabela-produto">
+                <tr class="tr-produto">
+                    <th>Foto</th>
+                    <th>Descrição</th>
+                    <th>Preço (R$)</th>
+                    <th>Quantidade disponível</th>
+                </tr>
+
+                <tr class="tr-produto">
+                    <td><img src="cinelli.jfif" alt="imagem de bicicleta fixa"/></td>
+                    <td>Bicicleta fixa da Cinelli, full carbono, na cor cinza escuro.</td>
+                    <td>7.000,00</td>
+                    <td>única unidade</td>
+                </tr>
+
+                <tr class="tr-produto">
+                    <td><img src="cannondale.jfif" alt="imagem de bicicleta fixa"/></td>
+                    <td>Bicicleta fixa da cannondale, full carbono, na cor azul.</td>
+                    <td>7.500,00</td>
+                    <td>única unidade</td>
+                </tr>
+
+                <tr class="tr-produto">
+                    <td><img src="gt.jfif" alt="imagem de bicicleta fixa"/></td>
+                    <td>Bicicleta fixa da Gt, de alumínio, na cor preta.</td>
+                    <td>3.500,00</td>
+                    <td>3 unidades</td>
+                </tr>
+
+                <tr class="tr-produto">
+                    <td><img src="makino.jfif" alt="imagem de bicicleta fixa"/></td>
+                    <td>Bicicleta fixa da Makino, de alumínio, na cor lilás.</td>
+                    <td>3.000,00</td>
+                    <td>5 unidades</td>
+                </tr>
+                
+                <!-- Crie mais uma linha desta tabela abaixo \/ -->
+
+                <tr class="tr-produto">
+                    <td><img src="leader.jfif" alt="imagem de bicicleta fixa"></td>
+                    <td>Bicicleta fixa da Leander, full carbono, na cor vermelha ferrari.</td>
+                    <td>8.000,00</td>
+                    <td>única unidade</td>
+                </tr>
+            </table>
+        </div>
+        <footer class="rodape">
+            <p>Siga-nos nas redes sociais!</p>
+
+            <div class="div-rodape">
+                <ul class="lista-rodape">
+                    <li><a href="#"><img src="fcbk.png" alt="link para nossa rede social no facebook"/></a></li>
+                    <li><a href="#"><img src="insta.png" alt="link para nossa rede social no intagram"/></a></li>
+                    <li><a href="#"><img src="twitter.png" alt="link para nossa rede social no twitter"/></a></li>
+                </ul>
+            </div>
+            
+        </footer>
     </div>
-    
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </div>
-
-    <h2>Controle de Estoque</h2>
-
-    <table>
-        <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
-        </tr>
-
-        <tr>
-            <td><img src="cinelli.jfif" alt="imagem de bicicleta fixa"/></td>
-            <td>Bicicleta fixa da Cinelli, full carbono, na cor cinza escuro.</td>
-            <td>R$ 7.000,00</td>
-            <td>única unidade</td>
-        </tr>
-
-        <tr>
-            <td><img src="cannondale.jfif" alt="imagem de bicicleta fixa"/></td>
-            <td>Bicicleta fixa da cannondale, full carbono, na cor azul.</td>
-            <td>R$ 7.500,00</td>
-            <td>única unidade</td>
-        </tr>
-
-        <tr>
-            <td><img src="gt.jfif" alt="imagem de bicicleta fixa"/></td>
-            <td>Bicicleta fixa da Gt, de alumínio, na cor preta.</td>
-            <td>R$ 3.500,00</td>
-            <td>3 unidades</td>
-        </tr>
-
-        <tr>
-            <td><img src="makino.jfif" alt="imagem de bicicleta fixa"/></td>
-            <td>Bicicleta fixa da Makino, de alumínio, na cor lilás.</td>
-            <td>R$ 3.000,00</td>
-            <td> * </td>
-        </tr>
-        
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
-
-        <tr>
-            <td><img src="leader.jfif" alt="imagem de bicicleta fixa"></td>
-            <td>Bicicleta fixa da Leander, full carbono, na cor vermelha ferrari.</td>
-            <td>R$ 8.000,00</td>
-            <td>única unidade</td>
-        </tr>
-
-    </table>
-
 </body>
 </html>
