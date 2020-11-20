@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Daniel Ribeiro</title>
+</head>
+<body>
+    <div class="div-centralizar">
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#galeria">GALERIA</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#form">CONTATO</a></li>
+            </ul>
+        </nav>
+        
+        <div class="div-conteudo-eu">
+                <h1 class="h1-conteudo">Quem sou eu:</h1>
+                <p>Daniel Ribeiro Sacramento, Soteropolitano, 
+                    mas resindo em Braga, Portugal. Estudante de letras e progrmação.
+                    Curioso com o bicho Homem. Amante de podcasts. Praticante de parkour e 
+                    corrida, nas horas vagas. 
+                </p>
+                <p>Como iniciei meu caminho na programação há poucos dias,
+                    este lugar ainda pode parecer um pouco desértico, mas logo, logo
+                    isso muda. Enfim, mais abaixo tem uma galeria com os projetos que 
+                    desenvolvi. Sinta-se em casa :)
+                </p>
+                <div>
+                    <img src="./img-eu.jpg" alt="Imagem minha" class="img-eu">
+                </div>
+        </div>
+        
+
+        <div class="div-galeria">
+            <h2><a name="galeria">GALERIA</a></h2>
+            <div class="div-img-vertical">
+                <img src="/projeto1.png" alt="Imagem de um site.">
+                <img src="/projeto2.png" alt="Imagem de uma site">
+                <img src="/projeto3.png" alt="">
+            </div>
+        </div>
+
+        <div class="div-skills">
+            <h2 class="titulo-center"><a name="skills">SKILLS</a></h2>
+            <div class="div-list-skills">
+                <ul>
+                    <li>
+                        <img src="/html-logo.png">
+                        <p>
+                            Tenho uma base relativamente forte, 
+                            dominando os conceitos fundamentais.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="/css-logo.png" alt="">
+                        <p>
+                            Domino bem a base e os conceitos mais
+                            fundamentais.
+                        </p>
+                    </li>
+                    <li>
+                        <img src="/js-logo.png" alt="">
+                        <p>
+                            Fiz alguns projetos pequenos. Não Domino
+                            muito bem a ferramenta, mas consigo me virar.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="div-formulario">
+            <h2><a name="form">CONTATO</a></h2>
+            <form action="#">              
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Nome completo" class="input-padrao" required>
+        
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="digite seu e-mail" class="input-padrao" required>
+        
+                    <label for="mensagem">Mensagem</label>
+                    <textarea cols="30" rows="10" id="mensagem" placeholder="Envie-nos a sua mensagem!" class="input-padrao" required></textarea>
+                    
+                    <input type="submit" value="Submit" class="btn-form">
+            </form>
+        </div>
+
+        <div class="div-rodape">
+            <footer>
+                <h2>REDES SOCIAIS</h2>
+                <ul>
+                    <li><a href="#"><img src="fcbk.png" alt="link para nossa rede social no facebook"/></a></li>
+                    <li><a href="#"><img src="insta.png" alt="link para nossa rede social no intagram"/></a></li>
+                    <li><a href="#"><img src="github-logo.png" alt="link para nossa rede social no github"/></a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
