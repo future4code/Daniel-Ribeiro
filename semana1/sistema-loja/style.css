@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Permanent Marker', cursive;;
+    
+}
+
+body {
+    background-image: url(./fundo.jfif);
+    background-size: 100%;
+}
+
+img {
+    border-radius: 10px;
+}
+
+img:hover {
+    transform: scale(1.2);
+    transition: 2s;
+}
+
+/* NAVEGAÇÃO */
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: grey; */
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.lista-menu {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lista-menu li {
+    margin: 10px;
+    display: inline;
+}
+
+.lista-menu li a {
+    padding: 5px;
+    display: inline-block;
+    color: black;
+}
+
+/* CONTEÚDO */
+
+.body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+
+#header {
+    margin-top: 5%;
+}
+
+.legenda {
+    margin: 0 auto 5%;
+}
+
+#info-loja {
+    margin: 7% auto;
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    margin-top: 10%;
+}
+
+.div-rodape {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.lista-rodape {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.rodape p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* CONTROLE DE ESTOQUE */
+
+/* .font-logo {
+    font-family: 'Permanent Marker', cursive;;
+} */
+
+.div-tabela {
+   color: rgb(0, 0, 0);
+   font-weight: 600;
+   text-align: center;
+   margin-top: 5%;
+    
+}
+
+.tabela-produto {
+    font-size: 20px;
+    /* width: 90%; */
+    margin: 0 auto
+}
+
+.div-tabela td {
+    padding: 0 5px;
+}
+
+/* ADICIONAR PRODUTO */
+
+.div-form {
+    margin-top: 30vh;
+    font-size: 20px;
+}
+
+.btn-add {
+    width: 50%;
+    padding: 0 5px;
+    font-size: 20px;
+}
+
+/* FUNCIONÁRIOS */
+
+.div-funcionarios {
+    margin-top: 10vh;
+    margin-bottom: 25%;
+    font-size: 20px;
+
+}
