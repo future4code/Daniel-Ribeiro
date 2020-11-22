@@ -10,111 +10,171 @@
 </head>
 <body>
     <div class="div-centralizar">
-        <nav class="nav-bar bc-and-cf">
+        <nav class="nav-bar padrao">
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#galeria">GALERIA</a></li>
                 <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#cursos">CURSOS</a></li>
                 <li><a href="#form">CONTATO</a></li>
                 <li><a href="#redes">REDES SOCIAIS</a></li>
             </ul>
         </nav>
-        
-        <div class="div-conteudo-eu bc-and-cf">
+        <main>
+            <div class="div-conteudo-eu padrao">
 
-                <div>
-                    <img src="./img-eu.jpg" alt="Imagem minha" class="img-eu">
-                </div>
-                <div class="conteudo">
-                    <h1 class="h1-conteudo">Who am I?</h1>
-                    <p>Daniel Ribeiro Sacramento, Soteropolitano, 
-                        mas morando em Braga, Portugal. Estudante de letras e Programador em formação.
-                        Curioso com o bicho Homem. Amante de podcasts. Praticante de parkour e 
-                        corrida, nas horas vagas. Como iniciei meu caminho na programação há poucos dias,
-                        este lugar ainda pode parecer um pouco desértico, mas logo, logo
-                        isso muda. Enfim, mais abaixo tem uma galeria com os projetos que 
-                        desenvolvi. Sinta-se em casa :)
-                    </p>
-                </div>
-        </div>
-        
-
-        <div class="div-galeria bc-and-cf">
-            <h2><a name="galeria">GALERIA</a></h2>
-            <div class="div-img-vertical">
-                <ul>
-                    <li>
-                        <img src="/projeto3.png" alt="">
-                        <p>Projeto barbearia Alura</p>
-                    </li>
-                    <li>
-                        <img src="/projeto1.png" alt="Imagem de um site.">
-                        <p>Projeto seleção Labenu</p>
-                    </li>
-                    <li>
-                        <img src="/projeto2.png" alt="Imagem de uma site">
-                        <p>Projeto Loja de bikes</p>
-                    </li>
-                </ul>
+                    <div>
+                        <img src="img/eu.jpg" alt="Imagem minha" class="img-eu">
+                    </div>
+                    <div class="conteudo">
+                        <h1 class="h1-conteudo">Who am I?</h1>
+                        <p><em>Daniel Ribeiro Sacramento</em>, Soteropolitano, 
+                            mas morando em Braga, Portugal. Estudante de letras e Programador em formação.
+                            Curioso com o bicho Homem. Amante de podcasts. Praticante de parkour e 
+                            corrida, nas horas vagas. Este espaço foi criado há poucos dias e 
+                            servirá principalmente para publicar meus projetos. Ele ainda pode parecer 
+                            um pouco desértico, mas logo, logo isso muda. 
+                            Enfim, mais abaixo tem uma galeria com os projetos que 
+                            desenvolvi. Sinta-se em casa :)
+                        </p>
+                    </div>
             </div>
-        </div>
+            
 
-        <div class="div-skills bc-and-cf">
-            <h2 class="titulo-center"><a name="skills">SKILLS</a></h2>
-            <div class="div-list-skills">
-                <ul>
-                    <li>
-                        <img src="/html-logo.png">
-                        <p>
-                            Tenho uma base relativamente forte, 
-                            dominando os conceitos fundamentais.
-                        </p>
-                        <div class="dominio"></div>
-                    </li>
-                    <li>
-                        <img src="/css-logo.png" alt="">
-                        <p>
-                            Domino bem a base e os conceitos mais
-                            fundamentais, como flexbox e grid.
-                        </p>
-                        <div class="dominio"></div>
-                    </li>
-                    <li>
-                        <img src="/js-logo.png" alt="">
-                        <p>
-                            Fiz alguns projetos pequenos. Não Domino
-                            muito bem a ferramenta, mas consigo me virar.
-                        </p>
-                        <div class="dominio"></div>
-                    </li>
-                </ul>
+            <div class="div-galeria padrao">
+                <h2><a name="galeria">GALERIA</a></h2>
+                <h3>
+                    Clique na imagem para ter mais informações
+                    sobre o projeto
+                </h3>
+                <div class="div-img-vertical">
+                    <ul>
+                        <li>
+                            <a href="galeria.html"><img src="img/img-bike.png" alt=""></a>
+                            <p>Projeto Loja Bikes Fixa</p>
+                        </li>
+                        <li>
+                            <a href="galeria2.html"><img src="img/img-barbearia.png" alt="Imagem de um site." id="img-labenu"></a>
+                            <p>Projeto barbearia Alura</p>
+                        </li>
+                        <li>
+                            <a href="galeria3.html"><img src="img/img-selecao.png" alt="Imagem de uma site"></a>
+                            <p>Projeto seleção Labenu</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <div class="div-formulario bc-and-cf">
-            <h2><a name="form">CONTATO</a></h2>
-            <form action="#">              
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" placeholder="Nome completo" class="input-padrao" required>
-        
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail" class="input-padrao" required>
-        
-                    <label for="mensagem">Mensagem</label>
-                    <textarea cols="30" rows="10" id="mensagem" placeholder="Deixe a sua mensagem!" class="input-padrao"></textarea>
+            <div class="div-skills padrao">
+                <h2 class="titulo-center"><a name="skills">SKILLS TÉCNICAS</a></h2>
+                <div class="div-list-skills">
+                    <ul>
+                        <li>
+                            <img src="img/html-logo.png">
+                            <p>
+                                Tenho uma base relativamente forte, 
+                                dominando os conceitos fundamentais.
+                            </p>
+                            <div class="dominio"></div>
+                        </li>
+                        <li>
+                            <img src="img/css-logo.png" alt="">
+                            <p>
+                                Domino bem a base e os conceitos mais
+                                fundamentais, como flexbox e grid.
+                            </p>
+                            <div class="dominio"></div>
+                        </li>
+                        <li>
+                            <img src="img/js-logo.png" alt="">
+                            <p>
+                                Fiz alguns projetos pequenos. Não Domino
+                                muito bem a ferramenta, mas consigo me virar.
+                            </p>
+                            <div class="dominio"></div>
+                        </li>
+                    </ul>
+                    <div class="soft-skills padrao">
+                        <h2>SOFT SKILLS</h2>
+                        <ul>
+                            <li>Empatia</li>
+                            <li>Senso de comunidade</li>
+                            <li>Facilidade para comunicar</li>
+                            <li>Focado em resolução de problemas</li>
+                            <li>Responsável com compromissos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-formacao padrao">
+                <h2><a name="cursos">CURSOS E TRABALHOS</a></h2>
+                <div class="formacao">
                     
-                    <input type="submit" value="Submit" class="btn-form">
-            </form>
-        </div>
+                    <ul>
+                        <li>
+                            <h3 class="h3-titulo-lista" id="list-style-none">CURSOS</h3>
+                        </li>
+                        <li>
+                            <p>
+                                - Imersão Front-end - Alura;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                - Curso de Javascript - Curso em vídeo;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                - Web Full Stack - Labenu (em andamento).
+                            </p>
+                        </li>
+                    </ul>
+                    
+                    <ul>
+                        <li>
+                            <h3 class="h3-titulo-lista">TRABALHOS</h3>
+                        </li>
+                        <li>
+                            <p>
+                                - Aux. ADM. - Serrana empreendimentos e Part. LTDA - 2011/2016;
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                - Agent contact center - NOS - 2019/07-2020.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="div-rodape bc-and-cf">
+            <div class="div-formulario padrao">
+                <h2><a name="form">CONTATO</a></h2>
+                <form action="#">              
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Nome completo" class="input-padrao" required>
+            
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail" class="input-padrao" required>
+            
+                        <label for="mensagem">Mensagem</label>
+                        <textarea cols="30" rows="10" id="mensagem" placeholder="Deixe a sua mensagem!" class="input-padrao"></textarea>
+                        
+                        <input type="submit" value="ENVIAR" class="btn-form">
+                </form>
+            </div>
+        </main>
+        <div class="div-rodape padrao">
             <footer>
                 <h2><a name="redes">REDES SOCIAIS</a></h2>
                 <div class="rodape">
                     <ul>
-                        <li><a href="https://www.facebook.com/daniel.sr.troia/" target="blank"><img src="fcbk.png" alt="link para nossa rede social no facebook"/></a></li>
-                        <li><a href="https://www.instagram.com/dannrib/" target="blank"><img src="insta.png" alt="link para nossa rede social no intagram"/></a></li>
-                        <li><a href="https://github.com/Shidoshi93" target="blank"><img src="GitHub-Mark-120px-plus.png" alt="link para nossa rede social no github"/></a></li>
+                        <li><a href="https://www.facebook.com/daniel.sr.troia/" target="blank"><img src="img/fcbk.png" alt="link para nossa rede social no facebook"/></a></li>
+                        <li><a href="https://www.instagram.com/dannrib/" target="blank"><img src="img/insta.png" alt="link para nossa rede social no intagram"/></a></li>
+                        <li><a href="https://github.com/Shidoshi93" target="blank"><img src="/img/GitHub-Mark-120px-plus.png" alt="link para nossa rede social no github"/></a></li>
+                        <li><a href="https://www.linkedin.com/in/daniel-ribeiro-59b739140/" target="blank"><img src="/img/LI-In-Bug.png" alt="link para nossa rede social no Linkedin"/></a></li>
                     </ul>
                 </div>
             </footer>
