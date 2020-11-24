@@ -34,3 +34,22 @@ body {
 .purple-background {
     background-color: purple;
 }
+
+#top-container {
+    height: 7vh;
+    display: flex;
+}
+
+#top-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#top-container > div:nth-child(1) {
+    width: 20%;
+}
+
+#top-container > div:nth-child(2) {
+    width: 80%;
+}
