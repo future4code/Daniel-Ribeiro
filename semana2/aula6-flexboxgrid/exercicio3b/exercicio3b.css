@@ -34,3 +34,16 @@ body {
 .purple-background {
     background-color: purple;
 }
+
+#top-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr
+}
+
+#top-container > div {
+    display: grid;
+    height: 7vh;
+    text-align: center;
+    align-items: center;
+}
+
