@@ -53,3 +53,32 @@ body {
     align-items: center;
     height: 50vh;
 }
+
+#middle-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    height: 35vh;
+}
+
+#content2 > div {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#blank {
+    height: 100%;
+}
+
+#vertical-middle-container > div {
+    height: 50%;
+}
+
+.padrao-middle-container {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
