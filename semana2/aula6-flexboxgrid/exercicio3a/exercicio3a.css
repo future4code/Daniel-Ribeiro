@@ -53,3 +53,10 @@ body {
 #top-container > div:nth-child(2) {
     width: 80%;
 }
+
+#main-container > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
