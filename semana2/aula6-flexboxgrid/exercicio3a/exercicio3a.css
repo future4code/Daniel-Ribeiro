@@ -102,8 +102,15 @@ body {
     height: 100%;
 }
 
-.padrao {
+.padrao-vertical-middle-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
