@@ -75,3 +75,12 @@ div {
     border: none;
 }
 
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+    #main-container {
+        grid-template-rows: 10vh repeat(4, 15vh) 30vh repeat(3, 15vh);
+    }
+
+    #container-1-2, #three, #container-4-5, #six, #container-9-10, #eleven {
+        grid-column: 1/4;
+    }
+}
