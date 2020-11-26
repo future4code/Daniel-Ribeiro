@@ -153,3 +153,37 @@ footer {
     font-size: 1.2em;
 }
 
+/* RESPONSIVIDADE */
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+    .container-above-all {
+        grid-template-columns:;
+        grid-template-rows: 10% 100% 10%;
+        grid-row-gap: 10px;
+    }
+
+    .container-video {
+        /* width: 0; */
+    }
+
+    header {
+        grid-row: 1/2;
+    }
+    
+    #container-main {
+        display: grid;
+        grid-row: 2/3;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+        
+    }
+
+    footer {
+        grid-row: 3/4;
+        /* height: 20vh; */
+        display: flex;
+        text-align: center;
+    }
+}
+
