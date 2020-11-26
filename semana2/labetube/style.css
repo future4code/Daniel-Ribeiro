@@ -4,13 +4,19 @@
     text-decoration: none;
 }
 
-#container-above-all {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-above-all {
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr); */
     grid-template-rows: 10vh 80vh 10vh;
     grid-template-areas: "h" "m" "f";
     align-items: center;
 }
+
+/* HOME */
 
 /* HEADER */
 
@@ -18,7 +24,7 @@ header {
     /* height: 10vh; */
     grid-row: 1/2;
     height: 100%;
-    background-color: rgb(155, 145, 145);
+    background-color: rgb(223, 215, 215);
     grid-area: h;
     /* margin: 0 0 30px 0; */
 }
@@ -32,7 +38,8 @@ nav {
 }
 
 #container-logo {
-    width: 30%;
+    width: 40%;
+    text-align: center;
     margin-left: 30px;
 }
 
@@ -40,7 +47,7 @@ nav {
     display: block;
     /* width: 15%; */
    /*  margin-left: 30px; */
-    font-size: 1.5em;
+    font-size: 2em;
     padding: 10px;
 }
 
@@ -73,7 +80,7 @@ nav {
 
 /* MAIN */
 
-main {
+#container-main {
     /* height: 80vh; */
     height: 65vh;
     display: grid;
@@ -87,13 +94,14 @@ main {
 }
 
 .container-video {
-    background-color: rgb(182, 171, 171);
+    background-color: rgb(238, 225, 225);
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 10px;
 }
 
@@ -106,11 +114,42 @@ main {
     font-size: 1.2em;
 }
 
+/* FOOTER */
 
+footer {
+    /* height: 10vh; */
+    background-color: rgb(155, 145, 145);
+    grid-area: f;
+    grid-row: 3/4;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    
+}
 
+/* PÁGINA DETALHES */
 
+#detalhe-video {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
 
+.container-video-detalhe {
+    background-color: rgb(216, 226, 226);
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 10px;
+}
 
-
-
+.container-video-detalhe p {
+    font-size: 1.2em;
+}
 
