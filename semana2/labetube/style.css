@@ -175,10 +175,6 @@ footer {
         grid-row-gap: 10px;
     }
 
-    .container-video {
-        /* width: 0; */
-    }
-
     header {
         grid-row: 1/2;
     }
