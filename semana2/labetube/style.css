@@ -57,6 +57,10 @@ nav {
     align-items: center;
 }
 
+button {
+    height: 20px;
+}
+
 
 #pesquisa {
     width: 90%;
@@ -64,8 +68,7 @@ nav {
 }
 
 #img-lupa {
-    width: 20px;
-    height: 20px;
+    height: 18px;
     margin-left: 5px;
 }
 
