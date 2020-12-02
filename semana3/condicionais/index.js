@@ -221,303 +221,362 @@ if (generoFilme === 'fantasia' && precoIngresso < 15) {
 
 
 */
-nomeCompleto = prompt('Digite seu nome completo').toUpperCase()
+nomeCompleto = prompt('Digite seu nome completo').toUpperCase
 tipoJogo = prompt('Qual o tipo de jogo? Responda IN para internacional e DO para doméstico.').toLowerCase()
 etapaJogo = prompt('Qual a etapa do jogo? Responda SF para semi-final, DT para decisão de terceiro lugar e FI para final.').toLowerCase()
 quantIngresso = Number(prompt('Qual a quantidade de ingressos. Responda com numerais.'))
 
+switch (tipoJogo){
+  case 'do':
+    tipoJogo = 'Doméstico'
+    break
+  case 'in':
+    tipoJogo = 'Internacional'
+}
 
-//jogos domésticos semi-final 
-  if (tipoJogo === 'do' && etapaJogo === 'sf') {
+switch (etapaJogo){
+  case 'sf':
+    etapaJogo = 'Semi-Final'
+    break
+  case 'dt':
+    etapaJogo = 'Decisão 3º lugar'
+    break
+  case 'fi':
+    etapaJogo = 'Final'
+}
+
+//jogos domésticos semi-final
+  if (tipoJogo === 'Doméstico' && etapaJogo === 'Semi-Final') {
     categoria = Number(prompt('Qual a categoria? Responda com os números correspondentes: 1, 2,3 ou 4.'))
     if(categoria === 1) {
-      valor = quantIngresso * 1.320
+      valorIngresso = 1320
+      valorTotal = quantIngresso * valorIngresso
       console.log('---Dados da compra---')
       console.log(`Nome: ${nomeCompleto}`)
-      console.log(`Tipo de jogo: Doméstico`)
-      console.log('Etapa do jogo: semi-final')
-      console.log('Categoria: 1')
+      console.log(`Tipo de jogo: ${tipoJogo}`)
+      console.log(`Etapa do jogo: ${etapaJogo}`)
+      console.log(`Categoria: ${categoria}`)
+      console.log(`Ingressos: ${quantIngresso}`)
       console.log('---Valores---')
-      console.log(`Valor do ingresso: R$ ${valor}`)
-      console.log(`Valor total: R$ ${valor}`)
+      console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+      console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 2) {
-        valor = quantIngresso * 880
+        valorIngresso = 880
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 3) {
-        valor = quantIngresso * 550
+        valorIngresso = 550
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
-        console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 4) {
-        valor = quantIngresso * 220
+        valorIngresso = 220
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
         console.log('---Valores---')
         console.log(`Valor do ingresso: R$ ${valor}`)
         console.log(`Valor total: R$ ${valor}`)
-    } 
+    }
       
- } 
+ }
 
 //jogos domésticos decisão terceiro lugar
 
-  if (tipoJogo === 'do' && etapaJogo === 'dt') {
+  if (tipoJogo === 'Doméstico' && etapaJogo === 'Decisão 3º lugar') {
     categoria = Number(prompt('Qual a categoria? Responda com os números correspondentes: 1, 2,3 ou 4.'))
     if(categoria === 1) {
-      valor = quantIngresso * 660
+      valorIngresso = 660
+      valorTotal = quantIngresso * valorIngresso
       console.log('---Dados da compra---')
       console.log(`Nome: ${nomeCompleto}`)
-      console.log(`Tipo de jogo: Doméstico`)
-      console.log('Etapa do jogo: semi-final')
-      console.log('Categoria: 1')
+      console.log(`Tipo de jogo: ${tipoJogo}`)
+      console.log(`Etapa do jogo: ${etapaJogo}`)
+      console.log(`Categoria: ${categoria}`)
+      console.log(`Ingressos: ${quantIngresso}`)
       console.log('---Valores---')
-      console.log(`Valor do ingresso: R$ ${valor}`)
-      console.log(`Valor total: R$ ${valor}`)
+      console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+      console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 2) {
-        valor = quantIngresso * 440
+        valorIngresso = 440
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 3) {
-        valor = quantIngresso * 330
+        valorIngresso = 330
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 4) {
-        valor = quantIngresso * 170
+        valorIngresso = 170
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
-    } 
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
+    }
       
- } 
+ }
 
 //jogos domésticos finais
 
-if (tipoJogo === 'do' && etapaJogo === 'fi') {
+if (tipoJogo === 'Doméstico' && etapaJogo === 'Final') {
     categoria = Number(prompt('Qual a categoria? Responda com os números correspondentes: 1, 2,3 ou 4.'))
     if(categoria === 1) {
-      valor = quantIngresso * 1.980
+      valorIngresso = 1980
+      valorTotal = quantIngresso * valorIngresso
       console.log('---Dados da compra---')
       console.log(`Nome: ${nomeCompleto}`)
-      console.log(`Tipo de jogo: Doméstico`)
-      console.log('Etapa do jogo: semi-final')
-      console.log('Categoria: 1')
+      console.log(`Tipo de jogo: ${tipoJogo}`)
+      console.log(`Etapa do jogo: ${etapaJogo}`)
+      console.log(`Categoria: ${categoria}`)
+      console.log(`Ingressos ${quantIngresso}`)
       console.log('---Valores---')
-      console.log(`Valor do ingresso: R$ ${valor}`)
-      console.log(`Valor total: R$ ${valor}`)
+      console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+      console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 2) {
-        valor = quantIngresso * 1.320
+        valorIngresso = 1320
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 3) {
-        valor = quantIngresso * 880
+        valorIngresso = 880
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
     } else if (categoria === 4) {
-        valor = quantIngresso * 330
+        valorIngresso = 330
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: R$ ${valor}`)
-    } 
+        console.log(`Valor do ingresso: R$ ${valorIngresso}`)
+        console.log(`Valor total: R$ ${valorTotal}`)
+    }
       
- } 
+ }
 
 
 //JOGOS INTERNACIONAIS
 
 //jogos internacionais semi-finais
-if (tipoJogo === 'in' && etapaJogo === 'sf') {
+
+if (tipoJogo === 'Internacional' && etapaJogo === 'Semi-Final') {
     categoria = Number(prompt('Qual a categoria? Responda com os números correspondentes: 1, 2,3 ou 4.'))
     if(categoria === 1) {
-      valor = quantIngresso * (1320*0.24)
+      valorIngresso = 1320*0.24
+      valorTotal = quantIngresso * valorIngresso
       console.log('---Dados da compra---')
       console.log(`Nome: ${nomeCompleto}`)
-      console.log(`Tipo de jogo: Doméstico`)
-      console.log('Etapa do jogo: semi-final')
-      console.log('Categoria: 1')
+      console.log(`Tipo de jogo: ${tipoJogo}`)
+      console.log(`Etapa do jogo: ${etapaJogo}`)
+      console.log(`Categoria: ${categoria}`)
+      console.log(`Ingressos: ${quantIngresso}`)
       console.log('---Valores---')
-      console.log(`Valor do ingresso: R$ ${valor}`)
-      console.log(`Valor total: U$ ${valor}`)
+      console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+      console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 2) {
-        valor = quantIngresso * (880*0.24)
+        valorIngresso = 880*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 3) {
-        valor = quantIngresso * (550*0.24)
+        valorIngresso = 550*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 4) {
-        valor = quantIngresso * (220*0.24)
+        valorIngresso = 220*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valor}`)
         console.log(`Valor total: U$ ${valor}`)
-    } 
+    }
       
-} 
+    }
 
 //jogos internacionais decisão terceiro lugar
 
-  if (tipoJogo === 'in' && etapaJogo === 'dt') {
+  if (tipoJogo === 'Internacional' && etapaJogo === 'Decisão 3º lugar') {
     categoria = Number(prompt('Qual a categoria? Responda com os números correspondentes: 1, 2,3 ou 4.'))
     if(categoria === 1) {
-      valor = quantIngresso * (660*0.24)
+      valorIngresso = 660*0.24
+      valorTotal = quantIngresso * valorIngresso
       console.log('---Dados da compra---')
       console.log(`Nome: ${nomeCompleto}`)
-      console.log(`Tipo de jogo: Doméstico`)
-      console.log('Etapa do jogo: semi-final')
-      console.log('Categoria: 1')
+      console.log(`Tipo de jogo: ${tipoJogo}`)
+      console.log(`Etapa do jogo: ${etapaJogo}`)
+      console.log(`Categoria: ${categoria}`)
+      console.log(`Ingressos: ${quantIngresso}`)
       console.log('---Valores---')
       console.log(`Valor do ingresso: U$ ${valor}`)
       console.log(`Valor total: R$ ${valor}`)
     } else if (categoria === 2) {
-        valor = quantIngresso * (440*0.24)
+        valorIngresso = 440*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingresso: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 3) {
-        valor = quantIngresso * (330*0.24)
+        valorIngresso = 330*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 4) {
-        valor = quantIngresso * (170*0.24)
+        valorIngresso = 170*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
-    } 
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
+    }
       
-} 
+    }
 
 //jogos internacionais finais
 
-if (tipoJogo === 'in' && etapaJogo === 'fi') {
+if (tipoJogo === 'Internacional' && etapaJogo === 'Final') {
     categoria = Number(prompt('Qual a categoria? Responda com os números correspondentes: 1, 2,3 ou 4.'))
     if(categoria === 1) {
-      valor = quantIngresso * (1980*0.24)
+      valorIngresso = 1980*0.24
+      valorTotal = quantIngresso * valorIngresso
       console.log('---Dados da compra---')
       console.log(`Nome: ${nomeCompleto}`)
-      console.log(`Tipo de jogo: Doméstico`)
-      console.log('Etapa do jogo: semi-final')
-      console.log('Categoria: 1')
+      console.log(`Tipo de jogo: ${tipoJogo}`)
+      console.log(`Etapa do jogo: ${etapaJogo}`)
+      console.log(`Categoria: ${categoria}`)
+      console.log(`Ingressos: ${quantIngresso}`)
       console.log('---Valores---')
-      console.log(`Valor do ingresso: R$ ${valor}`)
-      console.log(`Valor total: U$ ${valor}`)
+      console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+      console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 2) {
-        valor = quantIngresso * (1320*0.24)
+        valorIngresso = 1320*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 3) {
-        valor = quantIngresso * (880*0.24)
+        valorIngresso = 880*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingresso: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
     } else if (categoria === 4) {
-        valor = quantIngresso * (330*0.24)
+        valorIngresso = 330*0.24
+        valorTotal = quantIngresso * valorIngresso
         console.log('---Dados da compra---')
         console.log(`Nome: ${nomeCompleto}`)
-        console.log(`Tipo de jogo: Doméstico`)
-        console.log('Etapa do jogo: semi-final')
-        console.log('Categoria: 1')
+        console.log(`Tipo de jogo: ${tipoJogo}`)
+        console.log(`Etapa do jogo: ${etapaJogo}`)
+        console.log(`Categoria: ${categoria}`)
+        console.log(`Ingressos: ${quantIngresso}`)
         console.log('---Valores---')
-        console.log(`Valor do ingresso: R$ ${valor}`)
-        console.log(`Valor total: U$ ${valor}`)
-    } 
+        console.log(`Valor do ingresso: U$ ${valorIngresso}`)
+        console.log(`Valor total: U$ ${valorTotal}`)
+    }
       
-} 
-
-
-
-
-
-
+    }
