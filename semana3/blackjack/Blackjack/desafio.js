@@ -85,6 +85,8 @@
    //Imprimindo o resultado
    alert(mensagem[0] + `, Sua pontuação é ${totalUsuario}.` + '\n' + `As cartas do computador foram: ${itensComputador}, a pontuação do computador é: ${totalComputador}. ${resultado}`)
   
+ } else {
+    alert('Fim de jogo.')
  }
  
 

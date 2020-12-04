@@ -11,7 +11,7 @@
  * 
  */
 
- /* alert('Bem vindo ao BlackJack')
+  /*alert('Bem vindo ao BlackJack')
 
  //início do jogo
 
