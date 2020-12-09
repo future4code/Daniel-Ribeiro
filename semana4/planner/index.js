@@ -32,4 +32,14 @@ function riscar(id) {
     }
 }
 
+//limpando tasks
 
+function deleteTasks() {
+    arrayItens = document.getElementsByTagName('li')
+    if(confirm('Tem certeza que quer deletar tudo?')){
+        for(i = 0; i < arrayItens.length; i++) {
+            arrayItens[i].innerHTML = ''
+        } 
+    }
+    
+}
