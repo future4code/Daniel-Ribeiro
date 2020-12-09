@@ -1,18 +1,5 @@
-/* post = {
-    titulo: document.getElementById("titulo-post"),
-    autor: document.getElementById("autor-post"),
-    conteudo: document.getElementById("conteudo-post"),
-    imagem: document.getElementById('img-post'),
-}
 
-tituloPost = post.titulo
-autorPost = post.autor
-conteudoPost = post.conteudo
-imgPost = post.imagem
- */
-
-//<div><img src=${conteudoPost.value}></div>
-//console.log(allPosts)
+allPosts = []
 contador = 0
 
 addPost = () => {
@@ -28,22 +15,20 @@ addPost = () => {
     conteudoPost = post.conteudo
     imgPost = post.imagem
 
-    allPosts[contador] = [post]
-    contador++
-    console.log(allPosts)
 
     if(tituloPost.value == '' || autorPost.value == '' || conteudoPost.value == '') {
         alert('Existem campos obrigatórios que estão vazios.')
     } else {
-        
-        //window.location.href = "postagens.html"
-        containerPost = document.getElementById('container-de-posts')
-        containerPost.innerHTML += `<article class="box-article">
-                                        <h1>Título: ${tituloPost}</h1>
-                                        <h3>Autor: ${autorPost}</h3>
-                                        <p>${conteudoPost}</p>
-                                        <img src=${conteudoPost}>
-                                    </article>`
+
+        postFormatado = `<article class="box-article">
+                            <h1>Título: ${tituloPost}</h1>
+                            <h3>Autor: ${autorPost}</h3>
+                            <p>${conteudoPost}</p>
+                            <img src=${conteudoPost}>
+                        </article>`
+        identificadorPostagem = 'postagem' + String(contador)
+        localStorage.setItem(identificadorPostagem, postFormatado)
+        contador++
     }
     
     const itens = document.getElementsByClassName('input')
@@ -52,3 +37,16 @@ addPost = () => {
     }
     
 }
+
+carregarPosts = () => {
+    identificadorPost = ''
+    containerPost = document.getElementById('container-de-posts')
+    for (i = 0; i < localStorage.length; i++) {
+        identificadorPost = 'postagem' + String(i)
+        posts = localStorage.getItem(identificadorPost)
+        containerPost.innerHTML += posts 
+    }
+    
+}
+
+
