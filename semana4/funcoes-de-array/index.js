@@ -9,6 +9,10 @@ function imprimirDespesas(despesas){
     divDespesas.innerHTML = '<p><u>Despesas Detalhadas</u></p>'
 
     // AQUI VEM A IMPLEMENTAÇÃO
+    despesas.forEach((itens) =>{
+        divDespesas.innerHTML += `Valor: R$ ${itens.valor} | Tipo: ${itens.tipo} | Descrição: ${itens.descricao} <br>`
+    })
+    
 }
 
 
@@ -22,6 +26,24 @@ function imprimirExtrato(){
 
 
     // AQUI VEM A IMPLEMENTAÇÃO
+    tipoAlimentacao = document.getElementById('alimentacao')
+    tipoUtilidades = document.getElementById('utilidades')
+    tipoViagem = document.getElementById('viagem')
+
+    pegarValoresPorTipo = arrDespesas.filter((itens) =>{
+        if(itens.tipo === tipoAlimentacao.value) {
+            gastoAlimentacao += itens.valor
+            return true
+        } else if (itens.tipo === tipoUtilidades.value) {
+            gastoUtilidades += itens.valor 
+            return true
+        } else if (itens.tipo === tipoViagem.value) {
+            gastoViagem += itens.valor
+            return true
+        }
+    })
+
+    gastoTotal = gastoAlimentacao + gastoUtilidades + gastoViagem
 
     divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$${gastoTotal} | Alimentação: R$${gastoAlimentacao} | 
                                         Utilidades: R$${gastoUtilidades} | Viagem: R$${gastoViagem}</p>`
@@ -70,11 +92,26 @@ function filtrarDespesas(){
     let tipoFiltro = document.getElementById('tipoFiltro').value
     let valorMin = Number(document.getElementById('valorFiltroMin').value)
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
-
-
-    let despesasFiltradas // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
-
+    
+    //verificando se os inputs são válidos
+    if(tipoFiltro !== '' && valorMin > 0 && valorMax > 0){
+        
+        // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
+    
+    let despesasFiltradas  = arrDespesas.filter((itens, index, lista) => {
+        if (itens.tipo === tipoFiltro && itens.valor >= valorMin && itens.valor <= valorMax) {
+            return true
+        } else if (tipoFiltro === 'todos') {
+            return true
+        }
+    }) 
+    console.log(despesasFiltradas)
+    
     imprimirDespesas(despesasFiltradas)
+    } else {
+        alert('Insira dados válidos')
+    }
+    
 }
 
 
@@ -107,3 +144,4 @@ function validarDescricao(texto){
     }
     return false
 }
+
