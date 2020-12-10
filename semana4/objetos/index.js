@@ -7,13 +7,12 @@ addPost = () => {
         titulo: document.getElementById("titulo-post").value,
         autor: document.getElementById("autor-post").value,
         conteudo: document.getElementById("conteudo-post").value,
-        imagem: document.getElementById('img-post').value,
     }
     
     tituloPost = post.titulo
     autorPost = post.autor
     conteudoPost = post.conteudo
-    imgPost = post.imagem
+    //imgPost = post.imagem
 
 
     if(tituloPost.value == '' || autorPost.value == '' || conteudoPost.value == '') {
@@ -24,7 +23,6 @@ addPost = () => {
                             <h1>Título: ${tituloPost}</h1>
                             <h3>Autor: ${autorPost}</h3>
                             <p>${conteudoPost}</p>
-                            <img src=${conteudoPost}>
                         </article>`
         identificadorPostagem = 'postagem' + String(contador)
         localStorage.setItem(identificadorPostagem, postFormatado)
