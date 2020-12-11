@@ -31,3 +31,17 @@ gerar um output no console com o valor pós investimento, que é 165. Já no seg
 do switch case, logo, entrará no default e retornará o alert com "O TIPO
 DE INVESTIMENTO INFORMADO INCORRETO".
 */
+
+/* 
+3º
+
+Aqui temos três arrays. O primeiro com 14 números e o segundo e terceiro vazios. Temos um for of que percorre o primeiro array (numeros). 
+Dentro do for of temos um if que verifica se o resto da divisão de cada item do array numeros é igual a 0, caso seja, o array1 
+recebe este número pelo método push(). Se o resto da divisão for diferente de dois, o array2 recebe o número, também pelo mátodo push().
+
+Por fim, temos a impressão no console dos arrays:
+console 1: "Quantidade total de números 14";
+console 2: 6;
+console 3: 8.
+
+*/
