@@ -83,3 +83,13 @@ function zerarNum(valor, index, array) {
 numeros.forEach(zerarNum)
 console.log(numeros)
 */
+
+/* 
+2º
+
+A) FALSE;
+B) FALSE;
+C) TRUE;
+D) TRUE;
+E) TRUE.
+*/
