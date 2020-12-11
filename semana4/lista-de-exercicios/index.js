@@ -110,3 +110,31 @@ while(i < quantidadeDeNumerosPares) {
   i++
 }
 */
+
+/* 
+4º
+
+num1 = Number(prompt('Digite o primeiro lado.')) 
+num2 = Number(prompt('Digite o segundo lado.'))
+num3 = Number(prompt('Digite o terceiro lado.'))
+
+function verificarTriangulo (a, b, c) {
+  
+  resultado = ''
+  
+    if ((a === b) && (b === c) && (a === c)){
+      resultado = 'O triângulo é: Equilátero'
+    } else if ((a === b) || (b === c) || (a === c)) {
+      resultado = 'O triângulo é: Isósceles'
+    } else if ((a !== b) && (b !== c) && (a !== c)) {
+      resultado = 'O triângulo é: Escaleno'
+  } else {
+    console.log('Isso não é um triângulo')
+  }
+  
+  return resultado
+}
+  
+  verificarTriangulo(num1, num2, num3)
+console.log(resultado)
+*/
