@@ -43,5 +43,18 @@ Por fim, temos a impressão no console dos arrays:
 console 1: "Quantidade total de números 14";
 console 2: 6;
 console 3: 8.
+*/
 
+/* 
+4º
+
+Neste caso temos um for of percorrendo todo o array numeros e, por meio de dois if's, verificando se, no primeiro caso,
+cada item do array é menor do que o valor da variável numero1 (quem tem o valor Infinity), se for, a variável recebe este valor. 
+No segundo if, é verificado se os itens do array são meiores que o valor da variável numero2 (que tem seu valor 0),
+se for, o maior valor é guardado na variável.
+
+O resultado no console seria: 
+
+console 1: -10;
+console 2: 1590.
 */
