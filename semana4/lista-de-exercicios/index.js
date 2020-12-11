@@ -138,3 +138,40 @@ function verificarTriangulo (a, b, c) {
   verificarTriangulo(num1, num2, num3)
 console.log(resultado)
 */
+
+/* 
+5º
+
+num1 = Number(prompt('Digite o primeiro número'))
+num2 = Number(prompt('Digite o segundo número'))
+
+function verificarNumeros(num1, num2) {
+  if(num1 > num2){
+    console.log(`O maior número é: ${num1}`)
+  } else {
+    console.log(`O maior número é: ${num2}`)
+  }
+  
+  if(num1 % num2 > 0){
+    console.log(`${num1} não é divisível por ${num2}`)
+  } else {
+    console.log(`${num1} é divisível por ${num2}`)
+  }
+  
+  if(num2 % num1 > 0){
+    console.log(`${num2} não é divisível por ${num1}`)
+  } else {
+    console.log(`${num2} é divisível por ${num1}`)
+  }
+  
+  if(num1 > num2) {
+    console.log(`A diferença entre eles é ${num1 - num2}`)
+  } else {
+    console.log(`A diferença entre eles é ${((num1 - num2) * -1)}` )
+  }
+  
+}
+
+verificarNumeros(num1, num2)
+
+*/
