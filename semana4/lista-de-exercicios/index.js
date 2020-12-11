@@ -93,3 +93,20 @@ C) TRUE;
 D) TRUE;
 E) TRUE.
 */
+
+/* 
+3º
+
+O código não funcionaria por três motivos. O primeiro, a variável quantidadeDeNumerosPares não está 
+recebendo nenhum valor. O segundo motivo é que o while não está a ser incrementado, o que pode gerar 
+um loop infinito. O último, a condição estava como <=, o que fazia ter um sempre um número a mais.
+
+Fiz a correção e o código ficou assim:
+
+const quantidadeDeNumerosPares = Number(prompt('Digite um número'))
+let i = 0
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i++
+}
+*/
