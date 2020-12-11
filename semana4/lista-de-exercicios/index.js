@@ -16,3 +16,18 @@ Na exibição do resultado, temos a variável meuDinheiro recebendo o resultado 
 em um console.log e o resultado é exibido no console.
 */
 
+/* 
+2º
+
+Function investeDinheiro
+
+Esta função recebe dois parâmetros, o tipo de investimento e o valor investido. Com base nisso a função verifica,
+por meio de um switch case se o tipo informado pelo usuário é válido, caso seja, o valor informado é multiplicado pela sua respectiva 
+porcentagem e retorna o resultado esperado após investimento. Caso o tipo seja falso, é retornado um alert com a mensagem "O TIPO
+DE INVESTIMENTO INFORMADO INCORRETO". 
+
+No caso do exemplo, temos duas entradas. A primeira, que é a variável novoMontante, passa dois parâmetros true para a função, o que vai 
+gerar um output no console com o valor pós investimento, que é 165. Já no segundo caso, "Tesouro direto" não é um parâmetro válido dentro
+do switch case, logo, entrará no default e retornará o alert com "O TIPO
+DE INVESTIMENTO INFORMADO INCORRETO".
+*/
