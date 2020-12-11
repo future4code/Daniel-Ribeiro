@@ -58,3 +58,28 @@ O resultado no console seria:
 console 1: -10;
 console 2: 1590.
 */
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+//EXERCÍCIOS DE LÁGICA DE PROGRAMAÇÃO
+
+/* 
+1º
+
+Podemos iterar com while, for ou forEach().
+
+Exemplo com forEach:
+Usei o forEach() para percorrer o array e modificar cada elemento para 0.
+O console.log() está imprimindo item por item e mostrando seu índice.
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+function zerarNum(valor, index, array) {
+  
+  array[index] = 0
+  console.log(`${array[index]} seu índice é ${index}`)
+}
+
+numeros.forEach(zerarNum)
+console.log(numeros)
+*/
