@@ -176,6 +176,8 @@ verificarNumeros(num1, num2)
 
 */
 
+//--------------------------------------------------------------------------------------------------------------------------------
+
 //EXERCÍCIOS DE FUNÇÕES
 
 /* 
@@ -224,4 +226,14 @@ function pegandoSegundoMaiorMenor() {
 }
 
 pegandoSegundoMaiorMenor()
+*/
+
+/* 
+2º
+
+alertando = () => {
+  return alert('Hello Labenu!')
+}
+
+alertando()
 */
