@@ -335,14 +335,54 @@ listaPessoas = [
 	{ nome: "Artur", idade: 89 } 
 ]
 
+//a)
 pessoasAdultas = listaPessoas.filter((pessoas) => {
   return pessoas.idade >= 20
 })
 
+//b)
 pessoasJuvenis = listaPessoas.filter((pessoas) => {
   return pessoas.idade < 20
 })
 
 console.log(pessoasAdultas)
 console.log(pessoasJuvenis)
+ */
+
+ /* 
+ 2º
+
+//a)
+const numbers = [1, 2, 3, 4, 5, 6]
+
+doubleNumbers = numbers.map((num) => {
+  return num * 2
+})
+
+console.log(numbers)
+console.log(doubleNumbers)
+
+//b)
+const numbers = [1, 2, 3, 4, 5, 6]
+
+doubleNumbers = numbers.map((num) => {
+  return String(num * 3)
+})
+
+console.log(numbers)
+console.log(doubleNumbers)
+
+//c)
+const numbers = [1, 2, 3, 4, 5, 6]
+
+doubleNumbers = numbers.map((num) => {
+  if(num % 2 === 0){
+    return `${num} é par`
+  } else {
+    return `${num} é ímpar`
+  }
+})
+
+console.log(numbers)
+console.log(doubleNumbers)
  */
