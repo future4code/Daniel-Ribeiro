@@ -175,3 +175,53 @@ function verificarNumeros(num1, num2) {
 verificarNumeros(num1, num2)
 
 */
+
+//EXERCÍCIOS DE FUNÇÕES
+
+/* 
+1º
+
+numeros = [1, 15, 3, 30, 5, 60, 7, 10, 9, 13, 11, 20, 30, 45, 50]
+
+function pegandoSegundoMaiorMenor() {
+  maior = 0
+  menor = 0
+  segundoMaior = 0
+  segundoMenor = 0
+  
+  //Encontrando maior número
+  for(num of numeros){
+    if(num > maior) {
+      maior = num
+      menor = maior //passando o valor de maior para menor
+    } 
+  }
+  //Pegando o menor número
+    for(num of numeros) {
+      if(num < menor) {
+        menor = num
+      }
+    }
+  //Pegando o sengundo meior número
+  for(num of numeros){
+    if(num < maior){
+      segundoMaior = num
+    }
+  }
+  //pegando o segundo menor número
+  segundoMenor = segundoMaior //passando o valor do segundoMaior parasegundoMenor
+  for(num of numeros){
+    if((num < segundoMenor) && (num > menor)){
+      segundoMenor = num
+    }
+  }
+  
+  //Imprimindo o resultado
+  console.log(`O maior número é: ${maior}`)
+  console.log(`O menor número é: ${menor}`)
+  console.log(`O segundo maior é: ${segundoMaior}`)
+  console.log(`O segundo menor é: ${segundoMenor}`)
+}
+
+pegandoSegundoMaiorMenor()
+*/
