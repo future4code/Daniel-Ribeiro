@@ -276,3 +276,18 @@ function criaRetangulo(lado1, lado2) {
 criaRetangulo(lado1, lado2)
 console.log(retangulo)
 */
+
+/* 
+3º
+
+filmeFavorito = {
+  titulo: 'Interestelar',
+  ano: 2014,
+  diretor: 'Christopher Nolan',
+  elenco: ['	Matthew McConaughey', 'Anne Hathaway', 'Jessica Chastain', 'Matt Damon']
+}
+
+alert(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, 
+dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco[0]}, 
+${filmeFavorito.elenco[1]}, ${filmeFavorito.elenco[2]} e ${filmeFavorito.elenco[3]} .`)
+*/
