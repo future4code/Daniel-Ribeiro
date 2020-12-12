@@ -320,3 +320,29 @@ anonimizarPessoa(pessoa)
 console.log(pessoaAnonima)
 console.log(pessoa)
 */
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+//EXERCÍCIOS DE FUNÇÕES DE ARRAY
+
+/* 
+1º
+
+listaPessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+pessoasAdultas = listaPessoas.filter((pessoas) => {
+  return pessoas.idade >= 20
+})
+
+pessoasJuvenis = listaPessoas.filter((pessoas) => {
+  return pessoas.idade < 20
+})
+
+console.log(pessoasAdultas)
+console.log(pessoasJuvenis)
+ */
