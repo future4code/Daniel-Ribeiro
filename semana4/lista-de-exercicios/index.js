@@ -253,3 +253,26 @@ parecida funciona um objeto. Tendo isso em mente, podemos inferir que sua utilid
 capacidade de armazenar mais de um valor dentro de si. Enquando uma variável "normal" pode armazenar um valor 
 por vez, um array ou objeto pode armazenar infinitos valores. 
 */
+
+/* 
+2º
+
+//função que recebe largura e altura e retorna um obejeto contendo dados 
+//sobre o retângulo
+lado1 = Number(prompt('Digite a largura do retângulo: '))
+lado2 = Number(prompt('Digite a altura do retângulo: '))
+
+function criaRetangulo(lado1, lado2) {
+  retangulo = {
+    largura: lado1,
+    altura: lado2,
+    parimetro: (2 * (lado1 + lado2)),
+    area: lado1 * lado2
+  }
+  
+  return retangulo
+}
+
+criaRetangulo(lado1, lado2)
+console.log(retangulo)
+*/
