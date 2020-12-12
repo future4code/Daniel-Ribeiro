@@ -237,3 +237,19 @@ alertando = () => {
 
 alertando()
 */
+
+//--------------------------------------------------------------------------------------------------------------------------------
+
+//EXERCÍCIOS DE OBJETOS
+
+/* 
+1º
+
+Um array é basicamente um variável que guarda uma lista de itens. 
+Já um objeto, de forma simples, guarda um conjunto de informações de um determinado conceito. Por exemplo, 
+existe o conceito eu, que possui um nome, idade, gosto musical, mãe, irmãos etc...  tais características fazem 
+parte do objeto eu. Ou seja, eu sou um grande guarda-chuva que guarda em si todas essas infomrações, de maneira 
+parecida funciona um objeto. Tendo isso em mente, podemos inferir que sua utilidade está justamente na sua 
+capacidade de armazenar mais de um valor dentro de si. Enquando uma variável "normal" pode armazenar um valor 
+por vez, um array ou objeto pode armazenar infinitos valores. 
+*/
