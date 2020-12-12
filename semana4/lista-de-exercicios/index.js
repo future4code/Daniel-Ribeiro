@@ -291,3 +291,32 @@ alert(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano},
 dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco[0]}, 
 ${filmeFavorito.elenco[1]}, ${filmeFavorito.elenco[2]} e ${filmeFavorito.elenco[3]} .`)
 */
+
+/*
+4º
+
+nome = prompt('Digite seu nome:')
+idade = Number(prompt('Digite sua idade:'))
+email = prompt('Digite seu email:')
+endereço = prompt('Digite seu endereço')
+  
+pessoa = {
+  nome: nome,
+  idade: idade,
+  email: email,
+  endereco: endereço,
+}
+
+
+function anonimizarPessoa(pessoa) {
+  return pessoaAnonima = {
+    ... pessoa, 
+    nome: 'ANÔNIMO'
+  }
+  
+}
+
+anonimizarPessoa(pessoa)
+console.log(pessoaAnonima)
+console.log(pessoa)
+*/
