@@ -50,11 +50,10 @@ main {
 }
 
 .painel-de-videos {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 20px;
   flex-grow: 1;
   display: grid;
-  grid-template-columns: repeat(4, 24.8% 0.2%);
+  grid-template-columns: repeat(4, 24.8% 0);
   grid-template-rows: repeat(2, 230px 0px);
 }
 
