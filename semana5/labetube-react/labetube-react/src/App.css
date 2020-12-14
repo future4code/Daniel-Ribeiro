@@ -60,6 +60,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 24.8% 0);
   grid-template-rows: repeat(2, 230px 0px);
+  justify-content: space-between;
 }
 
 .video {
