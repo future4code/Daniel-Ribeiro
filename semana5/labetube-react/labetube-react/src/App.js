@@ -73,7 +73,7 @@ function App() {
                 sobre o mundo, o universo e tudo mais!
             </p>
         </footer>
-    </div>
+      </div>
 
     </div>
   );
