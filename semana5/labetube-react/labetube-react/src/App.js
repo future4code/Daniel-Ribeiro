@@ -9,6 +9,10 @@ function App() {
     alert("O vídeo será reproduzido")
   }
 
+  function avisarSobreLinks() {
+    alert('Desculpe o transtorno, mas ainda estamos em construção. Tente mais tarde.')
+  }
+
   return (
     <div>
       <div className="tela-inteira">
@@ -20,15 +24,15 @@ function App() {
         <main>
             <nav className="menu-vertical">
                 <ul>
-                    <a href="#"><li className="botoes-meunu-vertical">Início</li></a>
-                    <a href="#"><li className="botoes-meunu-vertical">Em alta</li></a>
-                    <a href="#"><li className="botoes-meunu-vertical">Inscrições</li></a>
-                    <a href="#"><li className="botoes-meunu-vertical">Biblioteca</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Início</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Em alta</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Inscrições</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Biblioteca</li></a>
                     <hr />
-                    <a href="#"><li className="botoes-meunu-vertical">Originais</li></a>
-                    <a href="#"><li className="botoes-meunu-vertical">Histórico</li></a>
-                    <a href="#"><li className="botoes-meunu-vertical">Seus vídeos</li></a>
-                    <a href="#"><li className="botoes-meunu-vertical">Assistir mais tarde</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Originais</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Histórico</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Seus vídeos</li></a>
+                    <a href="#" onClick={avisarSobreLinks}><li className="botoes-meunu-vertical">Assistir mais tarde</li></a>
                 </ul>
             </nav>
             
