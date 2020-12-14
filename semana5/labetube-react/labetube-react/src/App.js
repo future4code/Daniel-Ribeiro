@@ -20,14 +20,15 @@ function App() {
         <main>
             <nav className="menu-vertical">
                 <ul>
-                    <li className="botoes-meunu-vertical">Início</li>
-                    <li className="botoes-meunu-vertical">Em alta</li>
-                    <li className="botoes-meunu-vertical">Inscrições</li>
+                    <a href="#"><li className="botoes-meunu-vertical">Início</li></a>
+                    <a href="#"><li className="botoes-meunu-vertical">Em alta</li></a>
+                    <a href="#"><li className="botoes-meunu-vertical">Inscrições</li></a>
+                    <a href="#"><li className="botoes-meunu-vertical">Biblioteca</li></a>
                     <hr />
-                    <li className="botoes-meunu-vertical">Originais</li>
-                    <li className="botoes-meunu-vertical">Histórico</li>
-                    <li className="botoes-meunu-vertical">Seus vídeos</li>
-                    <li className="botoes-meunu-vertical">Assistir mais tarde</li>
+                    <a href="#"><li className="botoes-meunu-vertical">Originais</li></a>
+                    <a href="#"><li className="botoes-meunu-vertical">Histórico</li></a>
+                    <a href="#"><li className="botoes-meunu-vertical">Seus vídeos</li></a>
+                    <a href="#"><li className="botoes-meunu-vertical">Assistir mais tarde</li></a>
                 </ul>
             </nav>
             
