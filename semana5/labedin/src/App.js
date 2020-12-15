@@ -2,9 +2,12 @@ import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
-import ProfilePicture from './img/eu.jpg'
-import NosPicture from './img/nosImg.jpg'
-import HidealPicture from './img/logoHiperideal.png'
+import ProfilePicture from './img/eu.jpg';
+import NosPicture from './img/nosImg.jpg';
+import HidealPicture from './img/logoHiperideal.png';
+import EmailPicture from './img/logoEmail.png';
+import EnderecoPicture from './img/enderecoLogo.png';
+import { CardPequeno } from './components/CardPequeno/CardPequeno';
 
 function App() {
   return (
@@ -19,11 +22,26 @@ function App() {
           Também gosto bastante de atividade física, leitura e ouvir podcasts sobre ciência."
         />
         
-        <ImagemButton 
+        <ImagemButton
+          link="#" 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
         />
       </div>
+
+      <div className="page-section-container">
+        <CardPequeno
+          imagem={EmailPicture}
+          texto={<strong>Email:</strong>}
+          email={"dann.ribeiroo@gmail.com"}
+        />
+
+        <CardPequeno
+          imagem={EnderecoPicture}
+          texto={<strong>Endereço:</strong>}
+          email={"Rua Dom Martins, Braga - Portugal"}
+        />
+      </div>      
 
       <div className="page-section-container">
         <h2>Experiências profissionais</h2>
@@ -43,12 +61,14 @@ function App() {
 
       <div className="page-section-container">
         <h2>Minhas redes sociais</h2>
-        <ImagemButton 
-          imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png" 
+        <ImagemButton
+          link="https://www.facebook.com/daniel.sr.troia" 
+          imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png"
           texto="Facebook" 
         />        
 
-        <ImagemButton 
+        <ImagemButton
+          link="https://twitter.com/login" 
           imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
           texto="Twitter" 
         />        
