@@ -26,3 +26,16 @@ h2 {
   justify-content: center;
   margin-bottom: 20px;
 }
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+  .page-section-container {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+  .page-section-container {
+    width: 80vw;
+    font-size: 12px;
+  }
+}
