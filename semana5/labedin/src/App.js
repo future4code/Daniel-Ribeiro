@@ -9,7 +9,7 @@ import EmailPicture from './img/logoEmail.png';
 import EnderecoPicture from './img/enderecoLogo.png';
 import { CardPequeno } from './components/CardPequeno/CardPequeno';
 import { CardCompetencia } from './components/CardCompetencia/CardCompetencia';
-import { LiCompetencia } from './components/CardCompetencia/LiCompetencia'
+
 
 function App() {
   return (
