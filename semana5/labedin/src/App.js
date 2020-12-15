@@ -8,6 +8,8 @@ import HidealPicture from './img/logoHiperideal.png';
 import EmailPicture from './img/logoEmail.png';
 import EnderecoPicture from './img/enderecoLogo.png';
 import { CardPequeno } from './components/CardPequeno/CardPequeno';
+import { CardCompetencia } from './components/CardCompetencia/CardCompetencia';
+import { LiCompetencia } from './components/CardCompetencia/LiCompetencia'
 
 function App() {
   return (
@@ -56,6 +58,13 @@ function App() {
           nome="NOS Empreendimentos" 
           descricao="Apoio técnico ao cliente. Lidava com questões envolvendo configurações de internet,
           TV e serviços de voz." 
+        />
+      </div>
+
+      <div className="page-section-container">
+        <h2>Competências</h2>
+        <CardCompetencia 
+          
         />
       </div>
 

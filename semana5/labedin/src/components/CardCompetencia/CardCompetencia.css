@@ -1,0 +1,9 @@
+.box-ul {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
