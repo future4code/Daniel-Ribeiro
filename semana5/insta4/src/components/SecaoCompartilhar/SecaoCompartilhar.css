@@ -5,6 +5,11 @@
     justify-content: space-evenly;
 }
 
+.box-img-compartilhar img:hover {
+    cursor: pointer;
+}
+
 .img-compartilhar {
     width: 24px;
 }
+

@@ -19,6 +19,7 @@ class Post extends React.Component {
     numeroComentarios: 0,
     salvo: false, 
     compartilhar: false,
+    numeroCompartilhados: 0,
   }
 
   onClickCurtida = () => {
@@ -45,15 +46,37 @@ class Post extends React.Component {
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
+      numeroComentarios: this.state.numeroComentarios +1
+    })
+  }
+
+  compartilhadoFace = () => {
+    console.log('Post compartilhado no facebook')
+    this.setState({
+      numeroCompartilhados: this.state.numeroCompartilhados +1,
+    })
+  }
+
+  compartilhadoInsta = () => {
+    console.log('Post compartilhado no instagram')
+    this.setState({
+      numeroCompartilhados: this.state.numeroCompartilhados +1,
+    })
+  }
+
+  compartilhadoTwitter = () => {
+    console.log('Post compartilhado no twitter')
+    this.setState({
+      numeroCompartilhados: this.state.numeroCompartilhados +1,
     })
   }
 
   onClickCompartilhar = () => {
-    console.log('Clicou')
+    console.log('enviouuuuu')
     this.setState({
-      compartilhar: !this.state.compartilhar
+      compartilhar: !this.state.compartilhar,
     })
+    console.log(this.state.numeroCompartilhados)
   }
 
   onClickSave = () => {
@@ -88,7 +111,11 @@ class Post extends React.Component {
     let componenteCompartilhar 
 
     if(this.state.compartilhar){
-      componenteCompartilhar = <SecaoCompartilhar aoClicar={this.onClickCompartilhar}/>
+      componenteCompartilhar =  <SecaoCompartilhar 
+                                  onClickFace={this.compartilhadoFace}
+                                  onClickInsta={this.compartilhadoInsta}
+                                  onClickTwitter={this.compartilhadoTwitter}
+                                />
     }
 
     return <div className={'post-container'}>
@@ -120,6 +147,7 @@ class Post extends React.Component {
         <IconeComContador
           icone={iconeCompartilhar}
           onClickIcone={this.onClickCompartilhar}
+          valorContador={this.state.numeroCompartilhados}
         />
       </div>
       {componenteComentario}
