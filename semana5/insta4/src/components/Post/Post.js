@@ -18,6 +18,7 @@ class Post extends React.Component {
 
   onClickCurtida = () => {
     console.log('Curtiu!')
+    
   }
 
   onClickComentario = () => {
