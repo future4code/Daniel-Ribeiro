@@ -1,0 +1,10 @@
+.box-img-compartilhar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.img-compartilhar {
+    width: 24px;
+}

@@ -2,12 +2,14 @@ import React from 'react'
 import './Post.css'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
+import iconeCompartilhar from '../../img/compartilhar.svg'
 import iconeSaveBranco from '../../img/saveBranco.svg'
 import iconeSavePreto from '../../img/savePreto.svg'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import {SecaoCompartilhar} from '../SecaoCompartilhar/SecaoCompartilhar'
 
 class Post extends React.Component {
   state = {
@@ -16,6 +18,7 @@ class Post extends React.Component {
     comentando: false,
     numeroComentarios: 0,
     salvo: false, 
+    compartilhar: false,
   }
 
   onClickCurtida = () => {
@@ -43,7 +46,13 @@ class Post extends React.Component {
     this.setState({
       comentando: false,
       numeroComentarios: this.state.numeroComentarios + 1
-      
+    })
+  }
+
+  onClickCompartilhar = () => {
+    console.log('Clicou')
+    this.setState({
+      compartilhar: !this.state.compartilhar
     })
   }
 
@@ -62,18 +71,24 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
-    let componenteComentario
-
-    if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
-    }
-
     let postSalvo
 
     if(this.state.salvo){
       postSalvo = iconeSavePreto
     } else {
       postSalvo = iconeSaveBranco
+    }
+
+    let componenteComentario
+
+    if(this.state.comentando) {
+      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    }
+
+    let componenteCompartilhar 
+
+    if(this.state.compartilhar){
+      componenteCompartilhar = <SecaoCompartilhar aoClicar={this.onClickCompartilhar}/>
     }
 
     return <div className={'post-container'}>
@@ -101,8 +116,14 @@ class Post extends React.Component {
           icone={postSalvo}
           onClickIcone={this.onClickSave}
         />
+
+        <IconeComContador
+          icone={iconeCompartilhar}
+          onClickIcone={this.onClickCompartilhar}
+        />
       </div>
       {componenteComentario}
+      {componenteCompartilhar}
     </div>
   }
 }
