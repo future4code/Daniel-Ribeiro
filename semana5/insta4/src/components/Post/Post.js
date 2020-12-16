@@ -41,6 +41,7 @@ class Post extends React.Component {
     this.setState({
       comentando: false,
       numeroComentarios: this.state.numeroComentarios + 1
+      
     })
   }
 

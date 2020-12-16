@@ -3,32 +3,41 @@ import './App.css';
 import Post from './components/Post/Post';
 
 class App extends React.Component {
+
+  state ={
+    listaPost: [
+      {
+        nome: 'Daniel',
+        fotoPerfil: 'https://picsum.photos/50/50?ramdon=1',
+        fotoPostagem: 'https://picsum.photos/200/150?ramdon=1'
+      },
+      {
+        nome: 'Juliana',
+        fotoPerfil: 'https://picsum.photos/50/50?ramdon=2',
+        fotoPostagem: 'https://picsum.photos/200/150?ramdon=2'
+      },
+      {
+        nome: 'Valter',
+        fotoPerfil: 'https://picsum.photos/50/50?ramdon=3',
+        fotoPostagem: 'https://picsum.photos/200/150?ramdon=3'
+      },
+    ]
+  }
+
+  listaPostagem = this.state.listaPost.map((post) => {
+    return (
+      <Post
+        nomeUsuario={post.nome}
+        fotoUsuario={post.fotoPerfil}
+        fotoPost={post.fotoPostagem}
+      />
+    ) 
+  })
+
   render() {
     return (
-      <div>
-        <div className={'app-container'}>
-          <Post
-            nomeUsuario={'Daniel'}
-            fotoUsuario={'https://picsum.photos/50/50?ramdon=1'}
-            fotoPost={'https://picsum.photos/200/150?ramdon=1'}
-          />
-        </div>
-
-        <div className={'app-container'}>
-          <Post
-            nomeUsuario={'Juliana'}
-            fotoUsuario={'https://picsum.photos/50/50?ramdon=2'}
-            fotoPost={'https://picsum.photos/200/150?ramdon=2'}
-          />
-        </div>
-
-        <div className={'app-container'}>
-          <Post
-            nomeUsuario={'Valer'}
-            fotoUsuario={'https://picsum.photos/50/50?ramdon=3'}
-            fotoPost={'https://picsum.photos/200/150?ramdon=3'}
-          />
-        </div>
+      <div className={'app-container'}>
+          {this.listaPostagem}
       </div>
     );
   }
