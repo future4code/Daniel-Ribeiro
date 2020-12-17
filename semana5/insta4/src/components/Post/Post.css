@@ -1,15 +1,15 @@
-.post-container {
+/* .post-container {
     border: 1px solid gray;
     width: 300px;
     margin-bottom: 10px;
-}
+} */
 
-.post-header {
+/* .post-header {
     height: 40px;
     display: flex;
     align-items: center;
     padding-left: 10px;
-}
+}*/
 
 .post-footer {
     height: 40px;
@@ -17,13 +17,13 @@
     align-items: center;
     padding: 0 10px;
     justify-content: space-between;
-}
+} 
 
 .post-footer img {
     cursor: pointer;
 }
 
-.user-photo {
+/* .user-photo {
     height: 30px;
     width: 30px;
     margin-right: 10px;
@@ -32,4 +32,4 @@
 
 .post-photo {
     width: 100%;
-}
+} */

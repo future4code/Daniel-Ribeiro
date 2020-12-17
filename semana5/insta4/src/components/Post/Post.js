@@ -1,5 +1,6 @@
 import React from 'react'
 import './Post.css'
+import styled from 'styled-components'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 import iconeCompartilhar from '../../img/compartilhar.svg'
@@ -11,6 +12,45 @@ import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import {SecaoCompartilhar} from '../SecaoCompartilhar/SecaoCompartilhar'
 import { ComentarioCompartilhar } from '../SecaoCompartilhar/ComentarioCompartilhar'
+
+const BoxPosts = styled.div`
+  border: ${props => props.borda};
+  width: ${props => props.largura};
+  margin-bottom: 10px;
+`
+
+const BoxHeader = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+`
+
+const BoxFooter = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: space-between;
+  cursor: ${props => props.cursor};
+`
+const ImgUsuario = styled.img`
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  
+`
+
+const ImgPost = styled.img`
+  width: 100%;
+  
+`
+
+const Icones = styled.img`
+  cursor: pointer;
+`
+
 
 class Post extends React.Component {
   state = {
@@ -161,42 +201,45 @@ class Post extends React.Component {
                                 />
     }
 
-    return <div className={'post-container'}>
-      <div className={'post-header'}>
-        <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
-      </div>
+    return (
+      <BoxPosts borda="1px solid gray" largura="300px">
+        <BoxHeader >
+          <ImgUsuario cursor="pointer" src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+          <p>{this.props.nomeUsuario}</p>
+        </BoxHeader>
 
-      <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
+        <ImgPost  src={this.props.fotoPost} alt={'Imagem do post'}/>
 
-      <div className={'post-footer'}>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-        />
+        <div className="post-footer" >
+          <IconeComContador
+            icone={iconeCurtida}
+            onClickIcone={this.onClickCurtida}
+            valorContador={this.state.numeroCurtidas}
+          />
 
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
+          <IconeComContador
+            icone={iconeComentario}
+            onClickIcone={this.onClickComentario}
+            valorContador={this.state.numeroComentarios}
+          />
 
-        <IconeComContador
-          icone={postSalvo}
-          onClickIcone={this.onClickSave}
-        />
+          <IconeComContador
+            icone={postSalvo}
+            onClickIcone={this.onClickSave}
+          />
 
-        <IconeComContador
-          icone={iconeCompartilhar}
-          onClickIcone={this.onClickCompartilhar}
-          valorContador={this.state.numeroCompartilhados}
-        />
-      </div>
-      {componenteComentario}
-      {componenteCompartilhar}
-      {componenteComentarioCompartilhar}
-    </div>
+          <IconeComContador
+            icone={iconeCompartilhar}
+            onClickIcone={this.onClickCompartilhar}
+            valorContador={this.state.numeroCompartilhados}
+          />
+        </div>
+        {componenteComentario}
+        {componenteCompartilhar}
+        {componenteComentarioCompartilhar}
+      </BoxPosts>
+    )
+    
   }
 }
 

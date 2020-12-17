@@ -4,9 +4,11 @@ import Post from './components/Post/Post';
 import styled from 'styled-components'
 
 //Estilos
+
 const Boxform = styled.div`
   margin: ${props => props.marginTopDown} ${props => props.marginLeftRigth};
 `
+
 const InputPadrao = styled.input`
   margin: ${props => props.marginTopDown} ${props => props.marginLeftRigth};
 `
@@ -15,8 +17,6 @@ const ButtonPadrao = styled.button`
   color: white;
   background-color: #000;
 ` 
-
-
 
 class App extends React.Component {
 
@@ -45,7 +45,6 @@ class App extends React.Component {
 
   }
 
-
   adicionarPost = () => {
     console.log('cliquei')
     const novoPost = {
@@ -72,8 +71,6 @@ class App extends React.Component {
     console.log('input Foto postagem', event.target.value)
     this.setState({inputFotoPostagem: event.target.value})
   }
-
-
   
   render() {
 
