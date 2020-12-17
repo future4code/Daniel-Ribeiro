@@ -1,6 +1,22 @@
 import React from 'react';
 import './App.css';
 import Post from './components/Post/Post';
+import styled from 'styled-components'
+
+//Estilos
+const Boxform = styled.div`
+  margin: ${props => props.marginTopDown} ${props => props.marginLeftRigth};
+`
+const InputPadrao = styled.input`
+  margin: ${props => props.marginTopDown} ${props => props.marginLeftRigth};
+`
+
+const ButtonPadrao = styled.button`
+  color: white;
+  background-color: #000;
+` 
+
+
 
 class App extends React.Component {
 
@@ -38,7 +54,7 @@ class App extends React.Component {
       fotoPostagem: this.state.inputFotoPostagem,
     }
 
-    const novaPostagem = [...this.state.listaPost, novoPost]
+    const novaPostagem = [novoPost, ...this.state.listaPost]
     this.setState({listaPost: novaPostagem})
   }
 
@@ -73,12 +89,12 @@ class App extends React.Component {
   
     return (
       <div className={'app-container'}>
-        <div>
-            <input value={this.state.inputNome} onChange={this.onChengeInputNome}/>
-            <input value={this.state.inputFotoPerfil} onChange={this.onChengeInputFotoPerfil}/>
-            <input value={this.state.inputFotoPostagem} onChange={this.onChengeInputFotoPostagem}/>
-            <button onClick={this.adicionarPost}>Adicionar</button>
-        </div>
+        <Boxform marginTopDown="10px" marginLeftRigth="0">
+            <InputPadrao marginTopDown="0px" marginLeftRigth="10px" value={this.state.inputNome} placeholder="Nome" onChange={this.onChengeInputNome}/>
+            <InputPadrao marginTopDown="0px" marginLeftRigth="10px" value={this.state.inputFotoPerfil} placeholder="Foto Perfil" onChange={this.onChengeInputFotoPerfil}/>
+            <InputPadrao marginTopDown="0px" marginLeftRigth="10px" value={this.state.inputFotoPostagem} placeholder="Foto Postagem" onChange={this.onChengeInputFotoPostagem}/>
+            <ButtonPadrao onClick={this.adicionarPost}>Adicionar</ButtonPadrao>
+        </Boxform>
         <div className={'app-container'}>{listaPostagem}</div>
           
       </div>
