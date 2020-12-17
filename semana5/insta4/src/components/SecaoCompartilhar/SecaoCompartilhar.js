@@ -19,10 +19,9 @@ export class SecaoCompartilhar extends React.Component {
 		return (
             <div className={'comment-container'}>
                 <div className="box-img-compartilhar">
-                    <input onChange={this.onChangeComentarioCompartilhar}/>
                     <img className="img-compartilhar" src={IconeFace} alt='botao compartilhar no facebook' value='facebook' onClick={this.props.onClickFace}/>
                     <img className="img-compartilhar" src={IconeInsta} alt='botao compartilhar no Instagram' value='instagram' onClick={this.props.onClickInsta}/>
-                    <img className="img-compartilhar" src={IconeTwitter} alt='botao compartilhar no twitter' value='twitter' onClick={this.props.onClickTwitter}/>	
+                    <img className="img-compartilhar" src={IconeTwitter} alt='botao compartilhar no twitter' value='twitter' onClick={this.props.onClickTwitter}/>
                 </div>
 		    </div>
 

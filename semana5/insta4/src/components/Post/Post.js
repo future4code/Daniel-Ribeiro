@@ -10,6 +10,7 @@ import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 import {SecaoCompartilhar} from '../SecaoCompartilhar/SecaoCompartilhar'
+import { ComentarioCompartilhar } from '../SecaoCompartilhar/ComentarioCompartilhar'
 
 class Post extends React.Component {
   state = {
@@ -19,6 +20,9 @@ class Post extends React.Component {
     numeroComentarios: 0,
     salvo: false, 
     compartilhar: false,
+    compartilharFace: false,
+    compartilharInsta: false,
+    compartilharTwitter: false,
     numeroCompartilhados: 0,
   }
 
@@ -52,23 +56,48 @@ class Post extends React.Component {
 
   compartilhadoFace = () => {
     console.log('Post compartilhado no facebook')
-    this.setState({
-      numeroCompartilhados: this.state.numeroCompartilhados +1,
-    })
+    if(!this.state.compartilharFace){
+      this.setState({
+        compartilharFace: !this.state.compartilharFace,
+        numeroCompartilhados: this.state.numeroCompartilhados +1,
+      })
+    } else if(this.state.compartilharFace){
+      this.setState({
+        compartilharFace: !this.state.compartilharFace,
+      })
+      
+    }
+    
   }
 
   compartilhadoInsta = () => {
     console.log('Post compartilhado no instagram')
-    this.setState({
-      numeroCompartilhados: this.state.numeroCompartilhados +1,
-    })
+    if(!this.state.compartilharInsta){
+      this.setState({
+        compartilharInsta: !this.state.compartilharInsta,
+        numeroCompartilhados: this.state.numeroCompartilhados +1,
+      })
+    } else if(this.state.compartilharInsta){
+      this.setState({
+        compartilharInsta: !this.state.compartilharInsta,
+      })
+    }
+    
   }
 
   compartilhadoTwitter = () => {
     console.log('Post compartilhado no twitter')
-    this.setState({
-      numeroCompartilhados: this.state.numeroCompartilhados +1,
-    })
+    if(!this.state.compartilharTwitter){
+      this.setState({
+        compartilharTwitter: !this.state.compartilharTwitter,
+        numeroCompartilhados: this.state.numeroCompartilhados +1,
+      })
+    } else if(this.state.compartilharTwitter){
+      this.setState({
+        compartilharTwitter: !this.state.compartilharTwitter,
+      })
+    }
+    
   }
 
   onClickCompartilhar = () => {
@@ -106,6 +135,20 @@ class Post extends React.Component {
 
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    }
+
+    let componenteComentarioCompartilhar 
+
+    if(this.state.compartilharFace){
+      componenteComentarioCompartilhar = <ComentarioCompartilhar aoEnviar={this.aoEnviarComentario}/>
+    }
+
+    if(this.state.compartilharInsta){
+      componenteComentarioCompartilhar = <ComentarioCompartilhar aoEnviar={this.aoEnviarComentario}/>
+    }
+
+    if(this.state.compartilharTwitter){
+      componenteComentarioCompartilhar = <ComentarioCompartilhar aoEnviar={this.aoEnviarComentario}/>
     }
 
     let componenteCompartilhar 
@@ -152,6 +195,7 @@ class Post extends React.Component {
       </div>
       {componenteComentario}
       {componenteCompartilhar}
+      {componenteComentarioCompartilhar}
     </div>
   }
 }
