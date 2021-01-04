@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.page-section-container {
+  width: 40vw;
+  margin: 10px 0;
+}
+
+.page-section-container > h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+  .page-section-container {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+  .page-section-container {
+    width: 80vw;
+    font-size: 12px;
+  }
+}

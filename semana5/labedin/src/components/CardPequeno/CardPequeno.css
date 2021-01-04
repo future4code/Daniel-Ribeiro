@@ -1,0 +1,25 @@
+.smallCard-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.smallCard-container > img {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.smallCard-container > div {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.box-email p {
+    margin-left: 5px;
+}
+
