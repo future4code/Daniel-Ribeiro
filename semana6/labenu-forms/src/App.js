@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       <BoxApp>
-        <Etapa3 />
+        <Final />
 
         <div>
           <button>Próxima Etapa</button>
