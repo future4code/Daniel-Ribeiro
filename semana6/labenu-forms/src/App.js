@@ -13,6 +13,7 @@ export default class App extends React.Component {
 
   state = {
     etapa: 1,
+    btn: true,
   } 
 
   renderizaEtapa = () => {
@@ -31,7 +32,12 @@ export default class App extends React.Component {
   }
 
   irParaProximaEtapa = () => {
-    this.setState({etapa: this.state.etapa + 1})
+    let contadorEtapa = this.state.etapa + 1
+    this.setState({etapa: contadorEtapa})
+
+    if(contadorEtapa === 4){
+      this.setState({btn: false})
+    }
   }
 
   render() {
@@ -41,7 +47,7 @@ export default class App extends React.Component {
         {this.renderizaEtapa()}
 
         <div>
-          <button onClick={this.irParaProximaEtapa}>Próxima Etapa</button>
+          {this.state.btn ? <button onClick={this.irParaProximaEtapa}>Próxima Etapa</button> : <div></div>}
         </div>
       </BoxApp>
     );
