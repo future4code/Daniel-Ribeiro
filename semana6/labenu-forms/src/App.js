@@ -10,13 +10,38 @@ const BoxApp = styled.div`
 `
 
 export default class App extends React.Component {
+
+  state = {
+    etapa: 1,
+  }
+
+  renderizaEtapa = () => {
+    switch (this.state.etapa) {
+      case 1:
+        return <Etapa1 />;
+      case 2:
+        return <Etapa2 />
+      case 3:
+        return <Etapa3 />
+      case 4:
+        return <Final />
+      default:
+        return <Etapa1 />  
+    }
+  }
+
+  irParaProximaEtapa = () => {
+    this.setState({etapa: this.state.etapa + 1})
+  }
+
   render() {
     return (
       <BoxApp>
-        <Final />
+
+        {this.renderizaEtapa()}
 
         <div>
-          <button>Próxima Etapa</button>
+          <button onClick={this.irParaProximaEtapa}>Próxima Etapa</button>
         </div>
       </BoxApp>
     );
