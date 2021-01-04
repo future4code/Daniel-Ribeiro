@@ -1,0 +1,15 @@
+.box-img-compartilhar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box-img-compartilhar img:hover {
+    cursor: pointer;
+}
+
+.img-compartilhar {
+    width: 24px;
+}
+
