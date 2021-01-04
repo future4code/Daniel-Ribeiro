@@ -34,7 +34,7 @@ export default class Etapa1 extends React.Component {
                     </BoxEtapa>
 
                     <BoxEtapa>
-                        <label>3. Qual o e-amil?</label>
+                        <label>3. Qual o e-mail?</label>
                         <InputDadosGerais type="text" />
                     </BoxEtapa>
                     

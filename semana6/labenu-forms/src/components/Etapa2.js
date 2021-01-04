@@ -15,21 +15,26 @@ const InputEnsino = styled.input`
 
 export default class Etapa2 extends React.Component {
     render() {
-      return (
-        <BoxEtapa2>
-          <h1>Etapa 2 - Informações do ensino superior</h1>
+        return (
+            <BoxEtapa2>
 
-          <BoxEtapa2>
-              <label>Qual o curso?</label>
-              <InputEnsino type="text" />
-          </BoxEtapa2>
+                <h1>Etapa 2 - Informações do ensino superior</h1>
 
-          <BoxEtapa2>
-              <label>Qual a unidade de ensino?</label>
-              <InputEnsino type="text" />
-          </BoxEtapa2>
-        </BoxEtapa2>
-      );
+                <form>
+                    <BoxEtapa2>
+                        <label>Qual o curso?</label>
+                        <InputEnsino type="text" />
+                    </BoxEtapa2>
+
+                    <BoxEtapa2>
+                        <label>Qual a unidade de ensino?</label>
+                        <InputEnsino type="text" />
+                    </BoxEtapa2>
+                </form>
+
+
+            </BoxEtapa2>
+        );
     }
-    
-  }
+
+}

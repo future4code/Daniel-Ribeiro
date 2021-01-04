@@ -13,7 +13,7 @@ export default class App extends React.Component {
 
   state = {
     etapa: 1,
-  }
+  } 
 
   renderizaEtapa = () => {
     switch (this.state.etapa) {
