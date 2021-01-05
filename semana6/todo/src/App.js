@@ -31,7 +31,10 @@ class App extends React.Component {
 
   componentDidMount() {
     const atualizarTarefas = localStorage.getItem('tarefas')
-    this.setState({tarefas: JSON.parse(atualizarTarefas)})
+    if(atualizarTarefas){
+      this.setState({tarefas: JSON.parse(atualizarTarefas)})
+    }
+    
   };
 
   onChangeInput = (event) => {
