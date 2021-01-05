@@ -22,7 +22,7 @@ class App extends React.Component {
     state = {
       tarefas: [],
       inputValue: '',
-      filtro: ''
+      filtro: 'nenhuma'
     }
 
   componentDidUpdate() {
