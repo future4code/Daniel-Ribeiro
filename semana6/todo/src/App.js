@@ -26,27 +26,48 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-
-  };
+    localStorage.setItem('tarefas', JSON.stringify(this.state.tarefas))
+  }
 
   componentDidMount() {
-
-  };
+    const atualizarTarefas = localStorage.getItem('tarefas')
+    this.setState({tarefas: JSON.parse(atualizarTarefas)})
+  }
 
   onChangeInput = (event) => {
     this.setState({inputValue: event.target.value})
   }
 
   criaTarefa = () => {
+    const novaTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false,
+    }
+
+    const cloneEstado = [
+      ...this.state.tarefas, novaTarefa
+    ]
+
+    this.setState({tarefas: cloneEstado})
     
   }
 
   selectTarefa = (id) => {
+    const novaListaTarfas = this.state.tarefas.map((tarefaId) => {
+      if(id === tarefaId.id){
+        const novaTarefa = {...tarefaId, completa: !tarefaId.completa}
+        return novaTarefa
+      } else {
+        return tarefaId
+      }
+    })
 
+    this.setState({tarefas: novaListaTarfas})
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({filtro: event.target.value})
   }
 
   render() {
@@ -72,7 +93,7 @@ class App extends React.Component {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
+          <select value={this.state.filtro} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
