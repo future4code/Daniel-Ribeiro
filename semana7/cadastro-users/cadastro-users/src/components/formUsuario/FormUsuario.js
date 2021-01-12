@@ -21,6 +21,41 @@ const InputForm = styled.input`
 
 export default class FormUsuario extends React.Component {
 
+    state = {
+        inputValueName: '',
+        inputValueEmail: ''
+    }
+
+    pegarInputName = (event) =>{
+        this.setState({inputValueName: event.target.value})
+    }
+
+    pegarInputEmail = (event) =>{
+        this.setState({inputValueEmail: event.target.value})
+    }
+
+    createUser = () => {
+        const body = {
+            name: this.state.inputValueName,
+            email: this.state.inputValueEmail
+        }
+
+        console.log('body', body)
+
+        const request = axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', body,
+        {
+            headers: {
+                Authorization: 'daniel-ribeiro-epps'
+            }
+        })
+        request.then((response) => {
+            alert('Usuário criado com sucesso')
+        })
+        .catch((error) => {
+            alert('Não foi possível concluir o cadastro, tente novamente!')
+        })
+    }
+
     render() {
         return (
             <BoxUsuario>
@@ -31,7 +66,7 @@ export default class FormUsuario extends React.Component {
                     <div>
                         <label >Nome: </label>
                         <InputForm
-                            onChange=''
+                            onChange={this.pegarInputName}
                         />
                     </div>
 
@@ -39,12 +74,11 @@ export default class FormUsuario extends React.Component {
                     <div>
                         <label>E-mail: </label>
                         <InputForm
-                            onChange=''
+                            onChange={this.pegarInputEmail}
                         />
                     </div>
-
-                    <button>Salvar</button>
                 </form>
+                <button onClick={this.createUser}>Salvar</button>
             </BoxUsuario>
         )
     }

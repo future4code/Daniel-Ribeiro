@@ -14,16 +14,83 @@ const BoxListaUsuario = styled.div`
     border-radius: 10px;
 `
 
+const Paragrafo = styled.p`
+    display: flex;
+    justify-content: space-between;
+`
+
+const BtnDelete = styled.button`
+    margin-left: 15px;
+`
+
 export default class ListaUsuario extends React.Component {
 
+    state = {
+        users: []
+    }
+    
+    getUsers = () => {
+
+        const request = axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
+            {
+                headers: {
+                    Authorization: 'daniel-ribeiro-epps'
+                }
+            }
+        )
+        request.then((response) => {
+            
+            this.setState({ users: response.data })
+            console.log('Usuários', this.state.users)
+        })
+            .catch((error) => {
+                alert('Não foi possível mostrar a lista de usuários.')
+            })
+    }
+
+    componentDidMount = () => {
+        if (this.state.users) {
+            this.getUsers()
+        }
+    }
+
+    delUser = (userId) => {
+        const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:${userId}` ,
+            {
+                headers: {
+                    Authorization: 'daniel-ribeiro-epps'
+                }
+            }
+        )
+        request.then((response) => {
+            alert('O usuário foi removido.')
+        })
+        .catch((error) => {
+            alert('Não foi possível remover o usuário.' + error)
+        })
+    }
+
+
+
     render() {
+        
+
+        const usersRenderizados = this.state.users.map((user) => {
+            return (
+
+                <Paragrafo>
+                    {user.name}  
+                </Paragrafo>
+            )
+        })
         return (
             <BoxListaUsuario>
 
                 <h1>Lista de usuários</h1>
 
                 <div>
-                    <p>Lista Usuário</p>
+                    {usersRenderizados} 
+                    <BtnDelete onClick={this.delUser(this.state.id)}>x</BtnDelete>
                 </div>
 
             </BoxListaUsuario>
