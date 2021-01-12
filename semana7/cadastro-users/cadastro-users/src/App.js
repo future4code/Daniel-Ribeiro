@@ -1,18 +1,40 @@
-import React from 'React'
+import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import ListaUsuario from './components/listaUsuario/ListaUsuario'
+import FormUsuario from './components/formUsuario/FormUsuario'
 
+const BoxApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+`
 
-export default class App extends React.Component{
+export default class App extends React.Component {
 
-  render(){
+  state = {
+    mostrarLista: false
+  }
+
+  mudarComponente = () => {
+    this.setState({ mostrarLista: !this.state.mostrarLista })
+  }
+
+  render() {
     return (
-      <div className="App">
-        
-      </div>
+      <BoxApp>
+
+        {this.state.mostrarLista ? <ListaUsuario /> : <FormUsuario />}
+
+        <button onClick={this.mudarComponente}>
+          {this.state.mostrarLista ? 'Ir para Cadastro' : 'Ir para Lista Usuário'}
+        </button>
+      </BoxApp>
     )
   }
-  
+
 }
 
 
