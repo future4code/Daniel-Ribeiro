@@ -54,8 +54,12 @@ export default class ListaUsuario extends React.Component {
         }
     }
 
-    delUser = (userId) => {
-        const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:${userId}` ,
+    componentDidUpdate = () => {
+        this.getUsers()
+    }
+
+    delUser = (id) => {
+        const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}` ,
             {
                 headers: {
                     Authorization: 'daniel-ribeiro-epps'
@@ -74,12 +78,13 @@ export default class ListaUsuario extends React.Component {
 
     render() {
         
-
         const usersRenderizados = this.state.users.map((user) => {
             return (
 
                 <Paragrafo>
-                    {user.name}  
+                    {user.name} 
+
+                    <BtnDelete onClick={() => this.delUser(user.id)}>x</BtnDelete>
                 </Paragrafo>
             )
         })
@@ -90,7 +95,6 @@ export default class ListaUsuario extends React.Component {
 
                 <div>
                     {usersRenderizados} 
-                    <BtnDelete onClick={this.delUser(this.state.id)}>x</BtnDelete>
                 </div>
 
             </BoxListaUsuario>
