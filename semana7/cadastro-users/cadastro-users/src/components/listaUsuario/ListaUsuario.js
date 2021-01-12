@@ -20,7 +20,8 @@ const Paragrafo = styled.p`
 `
 
 const BtnDelete = styled.button`
-    margin-left: 15px;
+    margin-left: 50px;
+    cursor: pointer;
 `
 
 export default class ListaUsuario extends React.Component {
@@ -28,7 +29,7 @@ export default class ListaUsuario extends React.Component {
     state = {
         users: []
     }
-    
+
     getUsers = () => {
 
         const request = axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users',
@@ -39,7 +40,7 @@ export default class ListaUsuario extends React.Component {
             }
         )
         request.then((response) => {
-            
+
             this.setState({ users: response.data })
             console.log('Usuários', this.state.users)
         })
@@ -59,7 +60,7 @@ export default class ListaUsuario extends React.Component {
     }
 
     delUser = (id) => {
-        const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}` ,
+        const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
             {
                 headers: {
                     Authorization: 'daniel-ribeiro-epps'
@@ -69,22 +70,23 @@ export default class ListaUsuario extends React.Component {
         request.then((response) => {
             alert('O usuário foi removido.')
         })
-        .catch((error) => {
-            alert('Não foi possível remover o usuário.' + error)
-        })
+            .catch((error) => {
+                alert('Não foi possível remover o usuário.' + error)
+            })
     }
 
 
 
     render() {
-        
+
         const usersRenderizados = this.state.users.map((user) => {
             return (
 
                 <Paragrafo>
-                    {user.name} 
+                    <strong>{user.name.toUpperCase()}</strong>
+                    
 
-                    <BtnDelete onClick={() => this.delUser(user.id)}>x</BtnDelete>
+                    {<BtnDelete onClick={() => {if(window.confirm('Tem certeza que deseja remover o usuário?')) {this.delUser(user.id)}}}>Remover</BtnDelete>}
                 </Paragrafo>
             )
         })
@@ -94,7 +96,7 @@ export default class ListaUsuario extends React.Component {
                 <h1>Lista de usuários</h1>
 
                 <div>
-                    {usersRenderizados} 
+                    {usersRenderizados}
                 </div>
 
             </BoxListaUsuario>

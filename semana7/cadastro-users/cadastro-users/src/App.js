@@ -8,8 +8,11 @@ const BoxApp = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 `
+const BtnChangePage = styled.button`
+  margin-top: 30px;
+  cursor: pointer;  
+` 
 
 export default class App extends React.Component {
 
@@ -27,9 +30,9 @@ export default class App extends React.Component {
 
         {this.state.mostrarLista ? <ListaUsuario /> : <FormUsuario />}
 
-        <button onClick={this.mudarComponente}>
+        <BtnChangePage onClick={this.mudarComponente}>
           {this.state.mostrarLista ? 'Ir para Cadastro' : 'Ir para Lista Usuário'}
-        </button>
+        </BtnChangePage>
       </BoxApp>
     )
   }

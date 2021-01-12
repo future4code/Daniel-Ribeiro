@@ -19,6 +19,10 @@ const InputForm = styled.input`
     border-radius: 5px;
 `
 
+const BtnCreateUser = styled.button`
+    cursor: pointer;
+`
+
 export default class FormUsuario extends React.Component {
 
     state = {
@@ -36,8 +40,8 @@ export default class FormUsuario extends React.Component {
 
     createUser = () => {
         const body = {
-            name: this.state.inputValueName,
-            email: this.state.inputValueEmail
+            name: this.state.inputValueName.toUpperCase(),
+            email: this.state.inputValueEmail.toLowerCase()
         }
 
         console.log('body', body)
@@ -49,10 +53,12 @@ export default class FormUsuario extends React.Component {
             }
         })
         request.then((response) => {
-            alert('Usuário criado com sucesso')
+            alert(`${this.state.inputValueName}, Seu cadastro foi criado com sucesso. Seja bem vindo!`)
+            this.setState({inputValueName: '', inputValueEmail: ''})
+            
         })
         .catch((error) => {
-            alert('Não foi possível concluir o cadastro, tente novamente!')
+            alert('Não foi possível concluir o cadastro, tente novamente! Nome e e-mail obrigatórios.')
         })
     }
 
@@ -65,8 +71,11 @@ export default class FormUsuario extends React.Component {
                 <form>
                     <div>
                         <label >Nome: </label>
-                        <InputForm
+                        <InputForm 
+                            value={this.state.inputValueName}
                             onChange={this.pegarInputName}
+                            placeholder= 'Nome'
+                            required
                         />
                     </div>
 
@@ -74,11 +83,15 @@ export default class FormUsuario extends React.Component {
                     <div>
                         <label>E-mail: </label>
                         <InputForm
+                            type="email"
+                            value={this.state.inputValueEmail}
                             onChange={this.pegarInputEmail}
+                            placeholder= 'E-mail'
+                            required
                         />
                     </div>
                 </form>
-                <button onClick={this.createUser}>Salvar</button>
+                <BtnCreateUser onClick={this.createUser}>Criar Cadastro</BtnCreateUser>
             </BoxUsuario>
         )
     }
