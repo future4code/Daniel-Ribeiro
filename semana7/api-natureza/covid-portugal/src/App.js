@@ -1,15 +1,35 @@
 import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
+import Infos from './components/Infos'
+import covidLogo from './img/covid1.png'
 
 const BoxApp = styled.div`
-  background-color: aqua;
   display: flex;
   flex-direction: column;
-  height: 70vh;
-  width: 70vw;
-  margin: 0 auto;
+  justify-content: center;
+  /* height: 100vh; */
+  width: 90vw;
+  margin: 30px auto;
   text-align: center;
+`
+
+const BoxContentMain = styled.div`
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  height: 90vh;
+`
+
+const Title = styled.h1`
+  margin: 10px;
+  padding: 10px;
+`
+
+const CovidImg = styled.img`
+  width: 250px;
 `
 
 const BoxContent = styled.div`
@@ -21,22 +41,26 @@ const BoxContent = styled.div`
 
 const BoxDate = styled.div`
   text-align: center;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
 `
 
 const BtnDate = styled.button`
-
+  margin-left: 15px;
 `
 
-const BoxData = styled.div`
-  text-align: start;
-  width: 70%;
-  margin: 0 auto;
+
+
+const InputDate = styled.input`
+  width: 75px;
+  margin-left: 15px;
 `
+
 
 class App extends React.Component {
 
   state = {
-    dados: [],
     dadosConfirmados: [],
     dadosObitos: [],
     dadosAtivos: [],
@@ -44,12 +68,12 @@ class App extends React.Component {
     dadosInternados: [],
     inputDate: '',
     datas: [],
-    indice: ''
+    indice: '',
+    renderizar: false
   }
 
-  componentDidMount() {
+    componentDidMount() {
     this.getDadosCovid()
-
   }
 
   onChangeDate = (e) => {
@@ -58,18 +82,23 @@ class App extends React.Component {
 
   onClickDate = () => {
     this.getDadosCovid()
-    const indice1 = this.state.dados.indexOf(this.state.inputDate)
-    this.setState({ indice: indice1 })
+
+    if(this.state.inputDate){
+      const indice = this.state.datas.indexOf(this.state.inputDate)
+    this.setState({ indice: indice })
+    this.setState({ renderizar: !this.state.renderizar })
+    } else {
+      alert('Insira uma data!')
+    }
+    
   }
-
-
 
   getDadosCovid = async () => {
 
     try {
       const response = await axios.get(`https://covid19-api.vost.pt/Requests/get_full_dataset`)
       this.setState({
-        dados: response.data,
+        /* dados: response.data, */
         datas: Object.values(response.data.data),
         dadosConfirmados: Object.values(response.data.confirmados),
         dadosObitos: Object.values(response.data.obitos),
@@ -81,32 +110,40 @@ class App extends React.Component {
     } catch (error) {
       console.log(error)
     }
-
+    
   }
 
   render() {
-
-    console.log(this.state.dados)
-
+    const dia = this.state.inputDate
+    console.log('data', this.state.inputDate)
     return (
       <BoxApp>
-        <h1>Infos sobre Covid-19 em Portugal</h1>
+        <BoxContentMain>
+          <Title>Infos sobre Covid-19 em Portugal</Title>
 
-        <BoxContent>
-          <BoxDate>
-            <input onChange={this.onChangeDate} placeholder='dd-mm-yyyy' />
-            <BtnDate onClick={this.onClickDate}>Pesquisar</BtnDate>
-          </BoxDate>
+          <div>
+            <CovidImg src={covidLogo} alt='covid-19'/>
+          </div>
 
+          <BoxContent>
+            <BoxDate>
+              <label>Insira uma data: </label>
+              <InputDate  onChange={this.onChangeDate} placeholder='dd-mm-yyyy' required/>
 
-          <BoxData>
-            <p>Casos Confirmados: {this.state.dadosConfirmados[this.state.indice]}</p>
-            <p>Casos Ativos: {this.state.dadosAtivos[this.state.indice]}</p>
-            <p>Pessoas internadas: {this.state.dadosInternados[this.state.indice]}</p>
-            <p>Óbitos: {this.state.dadosObitos[this.state.indice]}</p>
-            <p>Casos Recuperados: {this.state.dadosRecuperadsos[this.state.indice]}</p>
-          </BoxData>
-        </BoxContent>
+              <BtnDate onClick={this.onClickDate}>Pesquisar</BtnDate>
+            </BoxDate>
+
+           {this.state.renderizar && this.state.inputDate && <Infos 
+            dadosConfirmados={this.state.dadosConfirmados}
+            dadosObitos={this.state.dadosObitos}
+            dadosRecuperadsos={this.state.dadosRecuperadsos}
+            dadosInternados={this.state.dadosInternados}
+            dadosAtivos={this.state.dadosAtivos}
+            inputdate={dia}
+            indice={this.state.indice}
+          />}
+          </BoxContent>
+        </BoxContentMain>
 
       </BoxApp>
     )
