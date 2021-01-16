@@ -7,14 +7,24 @@ const BoxApp = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 100vh;
+`
+
+const BoxListaRenderizada = styled.div`
+  width: 100%;
+  text-align: center;
+`
+
+const TagP = styled.p`
+  display: inline-block;
 `
 
 class App extends React.Component {
 
   state = {
     inputValuePlaylist: '',
-    listaPLaylist: []
+    listaPLaylist: [],
+    detalhesPlaylist: []
   }
 
   componentDidMount(){
@@ -63,10 +73,60 @@ class App extends React.Component {
     })
   }
 
+  deletePlaylist = (id) =>{
+    const request = axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}`, {
+      headers: {
+        Authorization: 'daniel-ribeiro-epps'
+      }
+    })
+    request.then((response) =>{
+      alert('Sua playlist foi deletada.')
+      
+      this.getAllPlaylist()
+    })
+    .catch((error) =>{
+      alert('Não foi possível deletar playlist.')
+    })
+
+  }
+
+  getDetails = (id) =>{
+    const request = axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks
+    `, {
+      headers: {
+        Authorization: 'daniel-ribeiro-epps'
+      }
+    })
+    request.then((response) =>{
+      alert('Acesso ao detalhes liberado')
+      this.setState({detalhesPlaylist: response.data.result.tracks})
+      console.log('Detalhes', response)
+      this.getAllPlaylist()
+    })
+    .catch((error) =>{
+      alert('Não foi possível ver detalhes da playlist.')
+    }) 
+  }
+
   render() {
+      const detalhesRenderizados = this.state.detalhesPlaylist.map((detalhe) =>{
+        return (
+          <div>
+            <div>
+              <p>Nome: {detalhe.name}</p>
+              <p>Artista: {detalhe.artist}</p>
+              <p>Url: {detalhe.url}</p>
+            </div>
+          </div>
+        )
+      })
       const listaRenderizada = this.state.listaPLaylist.map((playlist) =>{
       return (
-        <p>{playlist.name}</p>
+        <BoxListaRenderizada>
+          <TagP>{playlist.name}</TagP>
+          <button onClick={()=> {this.deletePlaylist(playlist.id)}}>Del Playlist</button>
+          <button onClick={()=> {this.getDetails(playlist.id)}}>Detalhes Playlist</button>
+        </BoxListaRenderizada>
       )
     }) 
 
@@ -78,9 +138,12 @@ class App extends React.Component {
           <button onClick={this.createPlaylist}>Criar</button>
         </div>
 
-        <div>
+        <BoxListaRenderizada>
           {listaRenderizada}
-        </div>
+        </BoxListaRenderizada>
+        <di>
+        {detalhesRenderizados}
+        </di>
       </BoxApp>
     );
   }
