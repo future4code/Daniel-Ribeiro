@@ -7,7 +7,7 @@ const BoxApp = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 `
 
 const BoxListaRenderizada = styled.div`
@@ -24,7 +24,12 @@ class App extends React.Component {
   state = {
     inputValuePlaylist: '',
     listaPLaylist: [],
-    detalhesPlaylist: []
+    detalhesPlaylist: [],
+    nameTrack: '',
+    artistTrack: '',
+    urlTrack: '',
+    select: '',
+    visibilidadeDetails: false,
   }
 
   componentDidMount(){
@@ -98,13 +103,53 @@ class App extends React.Component {
       }
     })
     request.then((response) =>{
-      alert('Acesso ao detalhes liberado')
-      this.setState({detalhesPlaylist: response.data.result.tracks})
+      /* alert('Acesso ao detalhes liberado') */
+      this.setState({
+        detalhesPlaylist: response.data.result.tracks,
+        visibilidadeDetails: !this.state.visibilidadeDetails,
+      })
       console.log('Detalhes', response)
       this.getAllPlaylist()
     })
     .catch((error) =>{
       alert('Não foi possível ver detalhes da playlist.')
+    }) 
+  }
+
+  onChangeNameTrack = (e) =>{
+    this.setState({nameTrack: e.target.value})
+  }
+
+  onChangeArtistTrack = (e) =>{
+    this.setState({artistTrack: e.target.value})
+  }
+
+  onChangeUrlTrack = (e) =>{
+    this.setState({urlTrack: e.target.value})
+  }
+
+  addTrack = (event) =>{
+    const id = event.target.value
+    const body = {
+      name: this.state.nameTrack,
+      artist: this.state.artistTrack,
+      url: this.state.urlTrack
+    }
+    const request = axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, body, {
+      headers: {
+        Authorization: 'daniel-ribeiro-epps'
+      }
+    })
+    request.then((response) =>{
+      alert('Track adicionada com sucesso')
+      this.setState({
+        nameTrack: '',
+        artistTrack: '',
+        url: '',
+      })
+    })
+    .catch((error) =>{
+      alert('Não foi possível adicionar track.')
     }) 
   }
 
@@ -115,7 +160,9 @@ class App extends React.Component {
             <div>
               <p>Nome: {detalhe.name}</p>
               <p>Artista: {detalhe.artist}</p>
-              <p>Url: {detalhe.url}</p>
+              <audio controls>
+                <source src={detalhe.url} type="audio/mpeg"/>
+              </audio>
             </div>
           </div>
         )
@@ -128,7 +175,29 @@ class App extends React.Component {
           <button onClick={()=> {this.getDetails(playlist.id)}}>Detalhes Playlist</button>
         </BoxListaRenderizada>
       )
-    }) 
+    })
+
+    const addTrackRenderizar = 
+        <div>
+
+          <h2>Adicionar track</h2>
+
+          <label>Nome: </label>
+          <input onChange={this.onChangeNameTrack} value={this.state.nameTrack}></input>
+
+          <label>Artista: </label>
+          <input onChange={this.onChangeArtistTrack} value={this.state.artistTrack}></input>
+
+          <label>Link: </label>
+          <input onChange={this.onChangeUrlTrack} value={this.state.urlTrack}></input>
+
+          <select onChange={this.addTrack}>
+            <option>Playlist</option>
+            {this.state.listaPLaylist.map((playlist) =>{
+              return <option value={playlist.id}>{playlist.name}</option>
+            })}
+          </select>
+        </div>
 
     return (
       <BoxApp>
@@ -138,12 +207,14 @@ class App extends React.Component {
           <button onClick={this.createPlaylist}>Criar</button>
         </div>
 
+        {addTrackRenderizar}
+
         <BoxListaRenderizada>
           {listaRenderizada}
         </BoxListaRenderizada>
-        <di>
-        {detalhesRenderizados}
-        </di>
+        <div>
+          {this.state.visibilidadeDetails && detalhesRenderizados}
+        </div>
       </BoxApp>
     );
   }
