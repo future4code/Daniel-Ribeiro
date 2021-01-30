@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Home from './Components/PageHome/Index';
 import Match from './Components/PageMatch/Index';
+import ImgMatches from './img/matches.png'
+import ImgChooseMatch from './img/chooseMatch.png'
+import Like from './img/like.png'
+import Unlike from './img/unlike.png'
 
 const ContainerApp = styled.div`
   display: flex;
@@ -14,11 +18,14 @@ const ContainerApp = styled.div`
 
 const ContainerAplication = styled.div`
   height: 95vh;
-  width: 30vw;
+  width:400px;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   border-radius: 5px;
+  background-color: #5b2b65;
+  background-image: linear-gradient(to bottom,  #5b2b65, #ab0fae);
+  overflow: hidden;
 `
 
 const Nav = styled.div`
@@ -28,6 +35,54 @@ const Nav = styled.div`
   justify-content: space-around;
 `
 
+const ContainerTilte = styled.div`
+  display: flex;
+`
+
+const Title1 = styled.h1`
+  margin: 0;
+  
+`
+
+const Title2 = styled.h1`
+  margin: 0;
+  color: #b809bbd9;
+  font-style: italic;
+`
+
+const BtnNav = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  transition-duration: 0.4s;
+  
+
+  &:hover{
+    transform: scale(1.2)
+  }
+
+  &:focus{
+    outline: none;
+  }
+`
+
+const ImgBtn = styled.img`
+  height: 30px;
+`
+
+const ContainerBtnLike = styled.div`
+  display: ${(props) => props.pageMatch ? 'none' : 'flex'}; 
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10vh;
+  
+`
+
+const Imglikes = styled.img`
+  height: 40px;
+  
+`
 
 function App() {
 
@@ -40,7 +95,7 @@ function App() {
 
   useEffect(() => {
     getProfiles()
-  }, [])
+  },[])
 
   const getProfiles = () => {
     const request = axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/daniel-ribeiro/person')
@@ -78,7 +133,15 @@ function App() {
       <ContainerAplication>
 
         <Nav>
-          <button onClick={changePage}>{goTo ? 'Home' : 'Matchs'}</button>
+          <ContainerTilte>
+            <Title1>Astro</Title1><Title2>match</Title2>
+          </ContainerTilte>
+          
+          <BtnNav onClick={changePage}>
+            {goTo ? 
+              <ImgBtn src={ImgChooseMatch}/> : 
+              <ImgBtn src={ImgMatches}/>}
+          </BtnNav>
         </Nav>
 
         {goTo ?
@@ -89,14 +152,19 @@ function App() {
               photo={profile.photo}
               bio={profile.bio}
               id={profile.id}
+              age={profile.age}
             />}
           </>
         }
 
-        <div>
-          <button onClick={getProfiles}>Unlike</button>
-          <button onClick={() => chooseProfile(profile.id, true)}>Like</button>
-        </div>
+        <ContainerBtnLike pageMatch={goTo}>
+          <BtnNav onClick={() => chooseProfile(false)}>
+            <Imglikes src={Unlike}/>
+          </BtnNav>
+          <BtnNav onClick={() => chooseProfile(true)}>
+            <Imglikes src={Like} />
+          </BtnNav>
+        </ContainerBtnLike>
 
       </ContainerAplication>
     </ContainerApp>
