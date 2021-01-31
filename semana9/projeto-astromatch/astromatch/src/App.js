@@ -27,11 +27,13 @@ const ContainerAplication = styled.div`
   width:400px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 1px solid black;
   border-radius: 5px;
   background-color: #5b2b65;
   background-image: linear-gradient(to bottom,  #5b2b65, #ab0fae);
   overflow: hidden;
+  position: relative;
 
   @media (max-width: 425px){
     height: 100vh;
@@ -45,6 +47,7 @@ const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 `
 
 const ContainerTilte = styled.div`
@@ -88,12 +91,19 @@ const ContainerBtnLike = styled.div`
   justify-content: space-evenly;
   align-items: center;
   height: 10vh;
-  
+  position: absolute;
+  bottom: 0;
+  width: 80%;
 `
 
 const Imglikes = styled.img`
   height: 40px;
   
+`
+
+const NoPeopleTilte = styled.div`
+  text-align: center;
+  width: 80%;
 `
 
 function App() {
@@ -107,7 +117,7 @@ function App() {
 
   useEffect(() => {
     getProfiles()
-  },[])
+  }, [])
 
   const getProfiles = () => {
     const request = axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/daniel-ribeiro/person')
@@ -148,30 +158,35 @@ function App() {
           <ContainerTilte>
             <Title1>Astro</Title1><Title2>match</Title2>
           </ContainerTilte>
-          
+
           <BtnNav onClick={changePage}>
-            {goTo ? 
-              <ImgBtn src={ImgChooseMatch}/> : 
-              <ImgBtn src={ImgMatches}/>}
+            {goTo ?
+              <ImgBtn src={ImgChooseMatch} /> :
+              <ImgBtn src={ImgMatches} />}
           </BtnNav>
         </Nav>
 
         {goTo ?
           <Match /> :
-          <>{profile && 
+          <>{profile ?
             <Home
               name={profile.name}
               photo={profile.photo}
               bio={profile.bio}
               id={profile.id}
               age={profile.age}
-            />}
+            /> :  <NoPeopleTilte>
+                    <h2>
+                      Não há mais pessoas na sua área.
+                      Tente novamente mais tarde.
+                    </h2>
+                  </NoPeopleTilte>}
           </>
         }
 
         <ContainerBtnLike pageMatch={goTo}>
           <BtnNav onClick={() => chooseProfile(false)}>
-            <Imglikes src={Unlike}/>
+            <Imglikes src={Unlike} />
           </BtnNav>
           <BtnNav onClick={() => chooseProfile(true)}>
             <Imglikes src={Like} />

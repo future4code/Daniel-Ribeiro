@@ -17,7 +17,7 @@ const ContainerPhoto = styled.div`
 
 const ContainerInfos = styled.div`
   position: absolute;
-  bottom: 30px;
+  bottom: 80px;
   color: black;
   z-index: 1;
   width: 80%;

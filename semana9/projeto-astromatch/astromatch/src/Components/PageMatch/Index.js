@@ -49,7 +49,7 @@ const ContainerBtnClear = styled.div`
 
 const BtnClear = styled.button`
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     background-color: transparent;
     border: none;
     transition-duration: .4s;

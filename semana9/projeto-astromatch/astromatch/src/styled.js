@@ -8,6 +8,7 @@ export const  ContainerAplication = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 100%;
 
     @media(max-width: 425px){
         width: 100%;
