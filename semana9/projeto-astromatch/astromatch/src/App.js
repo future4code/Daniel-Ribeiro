@@ -14,6 +14,12 @@ const ContainerApp = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  @media (max-width: 425px){
+    height: 100vh;
+    width: 100%;
+  }
+
 `
 
 const ContainerAplication = styled.div`
@@ -26,6 +32,12 @@ const ContainerAplication = styled.div`
   background-color: #5b2b65;
   background-image: linear-gradient(to bottom,  #5b2b65, #ab0fae);
   overflow: hidden;
+
+  @media (max-width: 425px){
+    height: 100vh;
+    width: 100%;
+    border: none;
+  }
 `
 
 const Nav = styled.div`

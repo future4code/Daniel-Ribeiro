@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import {ContainerAplication} from '../../styled'
-import Matchs from '../PageMatch/Index'
+
 
 const ContainerPhoto = styled.div`
   background-image: url(${(props) => props.foto});
@@ -15,14 +14,6 @@ const ContainerPhoto = styled.div`
   display: flex;
   justify-content: center;
 `
-/* const Img = styled.img`
-  height: 70%;
-  position: absolute;
-  z-index: 1;
-  border-radius: 10px;
-  box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;
-  
-` */
 
 const ContainerInfos = styled.div`
   position: absolute;

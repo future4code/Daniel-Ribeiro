@@ -117,9 +117,8 @@ function Index() {
             return (
                 <ContainerMatchLess>
                     <h2>Você ainda não tem nenhum match.</h2>
-                    <img src="https://media.giphy.com/media/jRtGjzkm8JbRC/giphy.gif" />
+                    <img src="https://media.giphy.com/media/jRtGjzkm8JbRC/giphy.gif" alt='gif de personagem de desenho chorando.'/>
                 </ContainerMatchLess>
-
             )
         } else {
             return (
