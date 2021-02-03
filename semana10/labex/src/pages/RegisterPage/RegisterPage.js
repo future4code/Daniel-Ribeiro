@@ -1,8 +1,15 @@
 import React from "react";
 
 const RegisterPage = () => {
+  
   return (
-    <div>Register page</div>
+    <div>
+      <h1>Register page</h1>
+      <div>
+      {/* <button onClick={() => goToPage(history, '/')}>Home</button> */}
+    </div>
+    </div>
+    
   )
 };
 

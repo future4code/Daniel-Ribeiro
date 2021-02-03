@@ -1,8 +1,16 @@
 import React from "react";
+import { useProtectedPage } from "../../Hooks/useProtectPage";
 
 const CreateTripPage = () => {
+  useProtectedPage()
+  
   return (
-    <div>Create trip page</div>
+    <div>
+      <h1>Create trip page</h1>
+      <div>
+        {/* <button onClick={() => goToPage(history, '/')}>Home</button> */}
+      </div>
+    </div>
   )
 };
 
