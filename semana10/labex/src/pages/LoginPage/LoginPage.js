@@ -3,7 +3,9 @@ import axios from 'axios'
 import { 
   ContainerInputLogin, 
   ContainerLogin, Input, 
-  ContainerInputItem } from '../LoginPage/style'
+  ContainerInputItem,
+  ContainerBtn,
+} from '../LoginPage/style'
 import { useHistory } from "react-router-dom";
 import { goToPage } from '../../Routes/Coordinator';
 
@@ -73,7 +75,10 @@ const LoginPage = () => {
             placeholder='Password'
           />
         </ContainerInputItem>
-        <button onClick={login}>Login</button>
+        <ContainerBtn>
+          <button onClick={login}>Login</button>
+        </ContainerBtn>
+        
       </ContainerInputLogin>
     </ContainerLogin>
   )

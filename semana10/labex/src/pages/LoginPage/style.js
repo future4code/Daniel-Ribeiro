@@ -14,7 +14,7 @@ export const ContainerInputLogin = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 40%;
+    width: 325px;
     height: 30vh;
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -28,6 +28,10 @@ export const ContainerInputItem = styled.div`
     margin: 5px 0;
 `
 
+export const ContainerBtn = styled.div`
+    margin-top: 30px;
+`
+
 export const Input = styled.input`
-    width: 300px;
+    width: 200px;
 `

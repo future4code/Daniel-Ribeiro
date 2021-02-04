@@ -15,9 +15,6 @@ const HomePage = () => {
       <ContainerNav>
         <button onClick={() => goToPage(history, '/login')}>Login</button>
         <button onClick={() => goToPage(history, '/application-form')}>Inscrever-se</button>
-        {/* <button onClick={() => goToPage(history, '/trips/list')}>Viagens</button>
-        <button onClick={() => goToPage(history, '/trips/details')}>Detalhes</button>
-        <button onClick={() => goToPage(history, '/trips/create')}>Criar Viagem</button> */}
       </ContainerNav>
     </Header>
   )
