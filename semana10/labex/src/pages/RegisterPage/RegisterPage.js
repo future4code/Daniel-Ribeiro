@@ -20,7 +20,8 @@ const RegisterPage = () => {
 
   const [trips, setTrips] = useState()
   const [idTrip, setIdTrip] = useState()
-  console.log('trip id', idTrip)
+  const [countryList, setCountryList] = useState()
+  /* console.log('country', form.country) */
 
   const onChangeTrips = (e) =>{
     setIdTrip(e.target.value)
@@ -28,13 +29,26 @@ const RegisterPage = () => {
 
   useEffect(() =>{
     getTrips()
+    getCountry()
   }, [])
 
   const getTrips = () =>{
     axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips')
     .then((res) => {
-      console.log(res.data.trips)
       setTrips(res.data.trips)
+    })
+    .catch((error) =>{
+      alert('Não foi possível pegar as viagens.')
+    })
+  }
+
+  const getCountry = () =>{
+    axios.get('https://restcountries.eu/rest/v2/all')
+    .then((res) =>{
+      setCountryList(res.data)
+    })
+    .catch((error) =>{
+      alert('Não funfou')
     })
   }
 
@@ -43,7 +57,6 @@ const RegisterPage = () => {
     clearFields()
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips/${idTrip}/apply`, form)
     .then((res) =>{
-      console.log(res)
       alert('Inscrição realizada com sucesso')
     })
     .catch((error) =>{
@@ -65,6 +78,7 @@ const RegisterPage = () => {
               id='nome'
               placeholder='Nome'
               type='text'
+              required
             />
           </ContainerItemForm>
 
@@ -76,17 +90,8 @@ const RegisterPage = () => {
               id='idade'
               placeholder='Idade'
               type='number'
-            />
-          </ContainerItemForm>
-
-          <ContainerItemForm>
-            <input 
-              name='country'
-              value={form.country}
-              onChange={onChange}
-              id='pais'
-              placeholder='Nacionalidade'
-              type='text'
+              min={'18'}
+              required
             />
           </ContainerItemForm>
 
@@ -97,6 +102,7 @@ const RegisterPage = () => {
               onChange={onChange}
               id='profissao'
               placeholder='Profissão'
+              required
             />
           </ContainerItemForm>
           
@@ -107,24 +113,32 @@ const RegisterPage = () => {
               onChange={onChange}
               id='profissao'
               placeholder='motivação'
+              required
             />
-            {/* <textarea
-              name='applicationTest'
-              value={form.applicationText}
+          </ContainerItemForm>
+
+          <ContainerItemForm>
+            <select
+              name='country'
+              value={form.country}
               onChange={onChange}
-              id='motivacao' 
-              placeholder='Fale um poco sobre sua motivação.'
-              rows='7' cols='36'
-              type='text'
-            /> */}
+              required
+            >
+              <option value={''} selected disabled>País</option>
+              {countryList && <>{countryList.map((country) =>{
+                return(
+                  <option value={country.name}>{country.name}</option>
+                )
+              })}</>}
+            </select>
           </ContainerItemForm>
 
           <ContainerItemForm>
             <select 
               name='trips'
-              /* value={form.trips} */
               onChange={onChangeTrips}
               value={idTrip}
+              required
             >
               <option selected disabled>Viagens</option>
               {trips && <>{trips.map((trip) =>{

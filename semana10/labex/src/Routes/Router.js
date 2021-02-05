@@ -22,7 +22,7 @@ export default function Router() {
                 </Route>
 
                 <Route path={"/trips/list"}>
-                    <Nav />
+                    <NavAdm />
                     <ListTripsPage />
                 </Route>
 
@@ -32,12 +32,12 @@ export default function Router() {
                 </Route>
 
                 <Route path={"/trips/details"}>
-                    <Nav />
+                    <NavAdm />
                     <TripDetaislPage />
                 </Route>
 
                 <Route path={"/trips/create"}>
-                    <Nav />
+                    <NavAdm />
                     <CreateTripPage />
                 </Route>
 
