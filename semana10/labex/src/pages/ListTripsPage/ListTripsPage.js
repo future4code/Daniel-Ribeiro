@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useProtectedPage } from "../../Hooks/useProtectPage";
 import axios from 'axios'
+import ComponentDetails from "../../Components/ComponentDetails/ComponentDetails";
+import ComponentListTrips from "../../Components/Navegation/ComponentListTrips/ComponentListTrips";
 
 const ListTripsPage = () => {
   useProtectedPage()
 
 
-  const [listTrips, setListTrips] = useState()
-  const [tripDetails, setTripDetails] = useState({}) 
+  const [listTrips, setListTrips] = useState([])
+  const [tripDetails, setTripDetails] = useState({})
+  const [tripId, setTripId] = useState('')
   const [goToDetails, setGoToDetails] = useState(false)
+  const token = localStorage.getItem('token')
 
-  useEffect(() =>{
+
+  useEffect(() => {
     getTrips()
-  }, [])
+  }, [listTrips])
 
-  const goTolistTrip = () =>{
+  const goTolistTrip = () => {
     setGoToDetails(false)
   }
 
@@ -28,56 +33,52 @@ const ListTripsPage = () => {
       })
   }
 
-  const getTripDetails = (tripId) =>{
+  const getTripDetails = (tripId) => {
     axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trip/${tripId}`, {
       headers: {
-        auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkJwRXdmb3pSSEJKbmcyb2ZKZ3JzIiwiZW1haWwiOiJhZG1AZ21haWwuY29tIiwiaWF0IjoxNjEyNTQzODk2fQ.6YtKlR_J-youh3OZ0ZsQ7HnxmhuLuG2af1Y3hb4m0Tc'
+        auth: token
       }
     })
-    .then((res) =>{
-      alert('Sucesso')
-      console.log(res)
-      setTripDetails(res.data.trip)
-      setGoToDetails(true)
-    })
-    .catch((error) =>{
-      alert('Não foi possível pegar detalhes.')
-    })
-  } 
+      .then((res) => {
+        console.log(res)
+        setTripDetails(res.data.trip)
+        setTripId(tripId)
+        setGoToDetails(true)
+      })
+      .catch((error) => {
+        alert('Não foi possível pegar detalhes.')
+      })
+  }
 
-  const trispsRender = listTrips && <>{listTrips.map((trip) => {
-    return (
-      <div>
-        <div>
-          {trip.name}
-        </div>
-        <div>
-          {trip.planet}
-        </div>
-        <div>
-          {trip.description}
-        </div>
-        <div>
-          <button onClick={() => getTripDetails(trip.id)}>Ver detalhes</button>
-        </div>
-        <hr></hr>
-      </div>
-    )
-  })}</>
+  const delTrips = (tripId) =>{
+    axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips/${tripId}`)
+    .then((res) =>{
+      alert('Viagem deletada')
+    })
+    .catch((erro) =>{
+      alert('não foi possível deletar viagem.')
+    })
+  }
+
+  
 
   return (
     <div>
-      <h1>List trip page</h1>
       <div>
+
         {goToDetails ? 
-        <>
-          {tripDetails.name}
-          <button onClick={goTolistTrip}>Voltar</button>
-        </> : 
-        <>
-          {trispsRender}
-        </>}
-        
+        <>{tripDetails && <ComponentDetails
+          tripDetails={tripDetails}
+          goTolistTrip={goTolistTrip}
+          getTripDetails={getTripDetails}
+          tripId={tripId}
+        />}</> :
+        <>{listTrips && <ComponentListTrips
+          listTrips={listTrips}
+          onclickGetTripDetails={getTripDetails}
+          delTrips={delTrips}
+        />}</>}
+
       </div>
     </div>
   )

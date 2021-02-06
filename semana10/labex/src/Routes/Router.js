@@ -31,10 +31,10 @@ export default function Router() {
                     <LoginPage />
                 </Route>
 
-                <Route path={"/trips/details"}>
+                {/* <Route path={"/trips/details"}>
                     <NavAdm />
                     <TripDetaislPage />
-                </Route>
+                </Route> */}
 
                 <Route path={"/trips/create"}>
                     <NavAdm />
