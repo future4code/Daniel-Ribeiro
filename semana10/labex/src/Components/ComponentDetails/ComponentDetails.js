@@ -1,77 +1,94 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {
+    BoxDetailsTrip,
+    ContainerMain,
+    ContainerCard,
+    ContainerBtn,
+    Btn,
+    Img,
+    BtnBack
+} from '../ComponentDetails/style';
+import ApprovedImg from '../../img/approved.png';
+import ReprovedImg from '../../img/reproved.png'
 
 const ComponentDetails = (props) => {
 
     const token = localStorage.getItem('token')
 
-    const decideCandidate = (candidateId, aproveValue) =>{
+    const decideCandidate = (candidateId, aproveValue) => {
         const body = {
             approve: aproveValue
         }
         axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips/${props.tripId}/candidates/${candidateId}/decide`, body, {
-            headers:{
+            headers: {
                 auth: token
             }
         })
-        .then((res) =>{
-            alert('candidato aprovado')
-            props.getTripDetails(props.tripId)
-        })
-        .catch((error) =>{
-            alert('error')
-        })
+            .then((res) => {
+                alert('candidato aprovado')
+                props.getTripDetails(props.tripId)
+            })
+            .catch((error) => {
+                alert('error')
+            })
     }
 
 
     const candidatesTrip = props.tripDetails.candidates.map((candidate) => {
         return (
             <div>
-                <p>{candidate.name}</p>
-                <button onClick={() => decideCandidate(candidate.id, true)}>Aprovar</button>
-                <button onClick={() => decideCandidate(candidate.id, false)}>Reprovar</button>
-            </div>
+                <div>
+                    <p>- {candidate.name}</p>
+                </div>
+                <ContainerBtn>
 
+                    <Btn onClick={() => decideCandidate(candidate.id, true)}><Img src={ApprovedImg}/></Btn>
+                    <Btn onClick={() => decideCandidate(candidate.id, false)}><Img src={ReprovedImg}/></Btn>
+                </ContainerBtn>
+            </div>
         )
     })
 
-    const approved = props.tripDetails.approved.map((candidate) =>{
-        return(
+    const approved = props.tripDetails.approved.map((candidate) => {
+        return (
             <div>
-                <p>{candidate.name}</p>
+                <p>- {candidate.name}</p>
             </div>
         )
     })
 
-    console.log('candidatos', props.tripDetails.candidates)
+
     return (
-        <div>
-            <div>
-                <h2>Detalhes da viagem</h2>
-                <p>Nome: {props.tripDetails.name}</p>
-                <p>Planeta: {props.tripDetails.planet}</p>
-                <p>Descrição: {props.tripDetails.description}</p>
-                <p>Data: {props.tripDetails.date}</p>
-                <p>Duração: {props.tripDetails.durationInDays} dias</p>
+        <BoxDetailsTrip>
+            <ContainerMain>
+                <ContainerCard>
+                    <h2>Detalhes da viagem</h2>
+                    <p><strong>Nome:</strong> {props.tripDetails.name}</p>
+                    <p><strong>Planeta:</strong> {props.tripDetails.planet}</p>
+                    <p><strong>Descrição:</strong> {props.tripDetails.description}</p>
+                    <p><strong>Data:</strong> {props.tripDetails.date}</p>
+                    <p><strong>Duração:</strong> {props.tripDetails.durationInDays} dias</p>
+                </ContainerCard>
 
-            </div>
+                <ContainerCard>
+                    <h2>Candidatos a astronautas</h2>
+                    {props.tripDetails.candidates.length === 0 ?
+                        <h3>Não há candidatos para esta viagem!</h3> :
+                        <>{candidatesTrip}</>}
+                </ContainerCard>
 
-            <div>
-                <h2>Candidatos a astronautas:</h2>
-                {props.tripDetails.candidates.length === 0 ?
-                    <h3>Não há candidatos para esta viagem!</h3> :
-                    <>{candidatesTrip}</>}
-            </div>
+                <ContainerCard>
+                    <h2>Astronautas Aprovados</h2>
+                    {props.tripDetails.approved.length === 0 ?
+                        <h3>Não há candidatos aprovados para esta viagem</h3> :
+                        <>{approved}</>}
+                </ContainerCard>
+            </ContainerMain>
 
-            <div>
-                <h2>Astronautas Aprovados</h2>
-                {props.tripDetails.approved.length === 0 ? 
-                <h3>Não há candidatos aprovados para esta viagem</h3> :
-                <>{approved}</>}
-            </div>
 
-            <button onClick={props.goTolistTrip}>Voltar</button>
-        </div>
+            <BtnBack onClick={props.goTolistTrip}>Voltar</BtnBack>
+        </BoxDetailsTrip>
     )
 }
 

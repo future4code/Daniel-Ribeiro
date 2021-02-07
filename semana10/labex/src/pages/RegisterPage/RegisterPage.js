@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useForm from "../../Hooks/useForm";
-import { 
+import {
   ContainerForm,
   ContainerApplicationForm,
   Form,
   ContainerItemForm,
+  ContainerBtn,
+  BtnApplication,
 } from '../RegisterPage/style'
 
 const RegisterPage = () => {
@@ -23,55 +25,55 @@ const RegisterPage = () => {
   const [countryList, setCountryList] = useState()
   /* console.log('country', form.country) */
 
-  const onChangeTrips = (e) =>{
+  const onChangeTrips = (e) => {
     setIdTrip(e.target.value)
   }
 
-  useEffect(() =>{
+  useEffect(() => {
     getTrips()
     getCountry()
   }, [])
 
-  const getTrips = () =>{
+  const getTrips = () => {
     axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips')
-    .then((res) => {
-      setTrips(res.data.trips)
-    })
-    .catch((error) =>{
-      alert('Não foi possível pegar as viagens.')
-    })
+      .then((res) => {
+        setTrips(res.data.trips)
+      })
+      .catch((error) => {
+        alert('Não foi possível pegar as viagens.')
+      })
   }
 
-  const getCountry = () =>{
+  const getCountry = () => {
     axios.get('https://restcountries.eu/rest/v2/all')
-    .then((res) =>{
-      setCountryList(res.data)
-    })
-    .catch((error) =>{
-      alert('Não funfou')
-    })
+      .then((res) => {
+        setCountryList(res.data)
+      })
+      .catch((error) => {
+        alert('Não funfou')
+      })
   }
 
-  const application = (event) =>{
+  const application = (event) => {
     event.preventDefault()
     clearFields()
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips/${idTrip}/apply`, form)
-    .then((res) =>{
-      alert('Inscrição realizada com sucesso')
-    })
-    .catch((error) =>{
-      alert('Não foi possível criar inscrição')
-    })
+      .then((res) => {
+        alert('Inscrição realizada com sucesso')
+      })
+      .catch((error) => {
+        alert('Não foi possível criar inscrição')
+      })
   }
 
   return (
     <ContainerApplicationForm>
-      <h1>Register page</h1>
       <ContainerForm>
         <h2>Inscreva-se</h2>
         <Form onSubmit={application}>
           <ContainerItemForm>
-            <input 
+            <label>Nome: </label>
+            <input
               name='name'
               value={form.name}
               onChange={onChange}
@@ -79,11 +81,14 @@ const RegisterPage = () => {
               placeholder='Nome'
               type='text'
               required
+              pattern={"^.{3,}"}
+              title={"O nome deve ter no mínimo 3 caracteres"}
             />
           </ContainerItemForm>
 
           <ContainerItemForm>
-            <input 
+          <label>Idade: </label>
+            <input
               name='age'
               value={form.age}
               onChange={onChange}
@@ -96,7 +101,8 @@ const RegisterPage = () => {
           </ContainerItemForm>
 
           <ContainerItemForm>
-            <input 
+          <label>Profissão: </label>
+            <input
               name='profession'
               value={form.profession}
               onChange={onChange}
@@ -105,9 +111,10 @@ const RegisterPage = () => {
               required
             />
           </ContainerItemForm>
-          
+
           <ContainerItemForm>
-            <input 
+          <label>Motivação: </label>
+            <input
               name='applicationText'
               value={form.applicationText}
               onChange={onChange}
@@ -118,6 +125,7 @@ const RegisterPage = () => {
           </ContainerItemForm>
 
           <ContainerItemForm>
+            <label>País: </label>
             <select
               name='country'
               value={form.country}
@@ -125,8 +133,8 @@ const RegisterPage = () => {
               required
             >
               <option value={''} selected disabled>País</option>
-              {countryList && <>{countryList.map((country) =>{
-                return(
+              {countryList && <>{countryList.map((country) => {
+                return (
                   <option value={country.name}>{country.name}</option>
                 )
               })}</>}
@@ -134,22 +142,26 @@ const RegisterPage = () => {
           </ContainerItemForm>
 
           <ContainerItemForm>
-            <select 
+            <label>Viagem: </label>
+            <select
               name='trips'
               onChange={onChangeTrips}
               value={idTrip}
               required
             >
               <option selected disabled>Viagens</option>
-              {trips && <>{trips.map((trip) =>{
-                return(
+              {trips && <>{trips.map((trip) => {
+                return (
                   <option value={trip.id}>{trip.name}</option>
                 )
               })}</>}
             </select>
           </ContainerItemForm>
 
-          <button type='submit'>Inscrever</button>
+          <ContainerBtn>
+            <BtnApplication type='submit'>Enviar</BtnApplication>
+          </ContainerBtn>
+          
         </Form>
       </ContainerForm>
     </ContainerApplicationForm>

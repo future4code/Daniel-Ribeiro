@@ -24,12 +24,14 @@ const CreateTripPage = () => {
     'Mércurio', 'Vênus', 'Saturno', 'Marte',  'Júpter', 'Urano', 'Netuno', 'Terra'
   ]
 
+  const token = localStorage.getItem('token')
+
   const createTrip = (event) =>{
     event.preventDefault()
     clearFields()
     axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/daniel-ribeiro-epps/trips`, form, {
       headers:{
-        auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkJwRXdmb3pSSEJKbmcyb2ZKZ3JzIiwiZW1haWwiOiJhZG1AZ21haWwuY29tIiwiaWF0IjoxNjEyNTQzODk2fQ.6YtKlR_J-youh3OZ0ZsQ7HnxmhuLuG2af1Y3hb4m0Tc'
+        auth: token
       }
     })
     .then((res) =>{
@@ -42,7 +44,6 @@ const CreateTripPage = () => {
   
   return (
     <ContainerApplicationForm>
-    <h1>Create page</h1>
     <ContainerForm>
       <h2>Inscreva-se</h2>
       <Form onSubmit={createTrip}>
@@ -54,6 +55,9 @@ const CreateTripPage = () => {
             id='nome'
             placeholder='Nome da viagem'
             type='text'
+            pattern={"^.{3,}"}
+            title={"O nome deve ter no mínimo 3 caracteres"}
+            required
           />
         </ContainerItemForm>
 
@@ -65,6 +69,8 @@ const CreateTripPage = () => {
             id='date'
             placeholder='date'
             type='date'
+            min=''
+            required
           />
         </ContainerItemForm>
 
@@ -76,6 +82,7 @@ const CreateTripPage = () => {
             id='description'
             placeholder='descrição da vaigem'
             type='text'
+            required
           />
         </ContainerItemForm>
         
@@ -87,6 +94,7 @@ const CreateTripPage = () => {
             id='durationInDays'
             placeholder='duração'
             type='number'
+            required
           />
         </ContainerItemForm>
 
@@ -95,6 +103,7 @@ const CreateTripPage = () => {
             name='planet'
             value={form.planet}
             onChange={onChange}
+            required
           >
             {planetList.map((planet) =>{
               return(

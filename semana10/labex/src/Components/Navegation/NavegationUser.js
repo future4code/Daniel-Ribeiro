@@ -13,9 +13,8 @@ const HomePage = () => {
         <Logo onClick={() => goToPage(history, '/')}>LabeX</Logo>
       </ContainerLogo>
       <ContainerNav>
-        <BtnNav onClick={() => goToPage(history, '/application-form')}>Inscrever-se</BtnNav>
-        <BtnNav onClick={() => goToPage(history, '/trips/details')}>Viagens</BtnNav>
         <BtnNav onClick={() => goToPage(history, '/login')}>Login</BtnNav>
+        <BtnNav onClick={() => goToPage(history, '/trips/details')}>Viagens</BtnNav>
       </ContainerNav>
     </Header>
   )

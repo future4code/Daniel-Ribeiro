@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useProtectedPage } from "../../Hooks/useProtectPage";
 import axios from 'axios'
 import ComponentDetails from "../../Components/ComponentDetails/ComponentDetails";
-import ComponentListTrips from "../../Components/Navegation/ComponentListTrips/ComponentListTrips";
+import ComponentListTrips from "../../Components/ComponentListTrips/ComponentListTrips";
+import {
+  ContainerTripsList,
+  BtnBack
+} from '../ListTripsPage/style'
 
 const ListTripsPage = () => {
   useProtectedPage()
-
 
   const [listTrips, setListTrips] = useState([])
   const [tripDetails, setTripDetails] = useState({})
   const [tripId, setTripId] = useState('')
   const [goToDetails, setGoToDetails] = useState(false)
   const token = localStorage.getItem('token')
-
 
   useEffect(() => {
     getTrips()
@@ -60,12 +62,8 @@ const ListTripsPage = () => {
     })
   }
 
-  
-
   return (
-    <div>
-      <div>
-
+    <ContainerTripsList>
         {goToDetails ? 
         <>{tripDetails && <ComponentDetails
           tripDetails={tripDetails}
@@ -78,9 +76,7 @@ const ListTripsPage = () => {
           onclickGetTripDetails={getTripDetails}
           delTrips={delTrips}
         />}</>}
-
-      </div>
-    </div>
+    </ContainerTripsList>
   )
 };
 

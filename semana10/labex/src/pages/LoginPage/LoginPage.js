@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'
-import { 
-  ContainerInputLogin, 
-  ContainerLogin, Input, 
+import {
+  ContainerInputLogin,
+  ContainerLogin, Input,
   ContainerInputItem,
   ContainerBtn,
+  ContainerMainLogin,
+  BtnLogin,
 } from '../LoginPage/style'
 import { useHistory } from "react-router-dom";
 import { goToPage } from '../../Routes/Coordinator';
@@ -37,7 +39,7 @@ const LoginPage = () => {
       )
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        
+
         goToPage(history, '/adm')
       })
       .catch((err) => {
@@ -46,40 +48,49 @@ const LoginPage = () => {
       });
   };
 
-  const onChangeEmail = (e) =>{
+  const onChangeEmail = (e) => {
     setEmail(e.target.value)
   }
 
-  const onChangePassword = (e) =>{
+  const onChangePassword = (e) => {
     setPassword(e.target.value)
   }
 
   return (
     <ContainerLogin>
-      <h1>Login page</h1>
-      <ContainerInputLogin>
-        <ContainerInputItem>
-          <label>E-mail: </label>
-          <Input 
-            value={email}
-            onChange={onChangeEmail}
-            placeholder='e-mail'
-          />
-        </ContainerInputItem>
-        
-        <ContainerInputItem>
-          <label>Password: </label>
-          <Input 
-            value={password}
-            onChange={onChangePassword}
-            placeholder='Password'
-          />
-        </ContainerInputItem>
-        <ContainerBtn>
-          <button onClick={login}>Login</button>
-        </ContainerBtn>
-        
-      </ContainerInputLogin>
+      <ContainerMainLogin>
+        <h1>Login</h1>
+        <ContainerInputLogin>
+          <ContainerInputItem>
+            <label>E-mail: </label>
+            <Input
+              value={email}
+              onChange={onChangeEmail}
+              placeholder='e-mail'
+              required
+              type='email'
+            />
+          </ContainerInputItem>
+
+          <ContainerInputItem>
+            <label>Senha: </label>
+            <Input
+              value={password}
+              onChange={onChangePassword}
+              placeholder='Password'
+              required
+              type='password'
+              title={"A senha deve ter no mínimo 6 caracteres"}
+              pattern={"^.{6,}"}
+            />
+          </ContainerInputItem>
+          <ContainerBtn>
+            <BtnLogin onClick={login}>Login</BtnLogin>
+          </ContainerBtn>
+
+        </ContainerInputLogin>
+      </ContainerMainLogin>
+
     </ContainerLogin>
   )
 };

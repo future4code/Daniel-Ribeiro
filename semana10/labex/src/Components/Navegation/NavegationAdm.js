@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { goToPage } from '../../Routes/Coordinator';
-import { Header, ContainerNav, ContainerLogo, Logo } from '../Navegation/Style'
+import { Header, ContainerNav, BtnNav, ContainerLogo, Logo } from '../Navegation/Style'
 
 const HomePage = () => {
 
@@ -20,10 +20,9 @@ const HomePage = () => {
                 <Logo onClick={() => goToPage(history, '/')}>LabeX</Logo>
             </ContainerLogo>
             <ContainerNav>
-                <button onClick={() => goToPage(history, '/trips/list')}>Viagens</button>
-                {/* <button onClick={() => goToPage(history, '/trips/details')}>Detalhes</button> */}
-                <button onClick={() => goToPage(history, '/trips/create')}>Criar Viagem</button>
-                <button onClick={() => logout()}>Logout</button>
+                <BtnNav onClick={() => goToPage(history, '/trips/list')}>Viagens</BtnNav>
+                <BtnNav onClick={() => goToPage(history, '/trips/create')}>Criar Viagem</BtnNav>
+                <BtnNav onClick={() => logout()}>Logout</BtnNav>
             </ContainerNav>
         </Header>
     )
