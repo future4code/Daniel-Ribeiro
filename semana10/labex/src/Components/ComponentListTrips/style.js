@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const BoxListTrip = styled.div`
-    position: relative;
+    /* position: relative; */
     width: 90%;
-    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

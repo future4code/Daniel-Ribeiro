@@ -42,7 +42,7 @@ const TripDetailsPage = () => {
       <ContainerMainTrips>
         <h1>Viagens Disponíveis</h1>
         <ContainerInfoTrip>
-          {listTripsRender}
+          {listTripsRender ? <>{listTripsRender}</> : 'aguarde'}
         </ContainerInfoTrip>
       </ContainerMainTrips>
     </ContainerTrips>

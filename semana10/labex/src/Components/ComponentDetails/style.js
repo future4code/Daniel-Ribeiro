@@ -4,7 +4,7 @@ export const BoxDetailsTrip = styled.div`
     /* position: absolute; */
     top: 200px;
     width: 90%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     display: flex;
     color: black;
@@ -18,6 +18,8 @@ export const ContainerMain = styled.div`
     display: flex;
     justify-content: space-around;
     top: 100px;
+    margin-top: 100px;
+    min-height: 60vh;
 `
 
 export const ContainerCard = styled.div`

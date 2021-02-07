@@ -5,8 +5,8 @@ export const ContainerTripsList = styled.div`
     background-image: url(${BackgroundTrip});
     background-size: 100%;
     background-repeat: no-repeat;
-    position: absolute;
-    height: 100%;
+    /* position: absolute; */
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;

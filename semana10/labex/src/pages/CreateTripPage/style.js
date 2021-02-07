@@ -52,3 +52,11 @@ export const ContainerItemForm = styled.div`
         }
     }
 `
+
+export const ContainerBtn = styled.div`
+
+`
+
+export const Btn = styled.button`
+    
+`

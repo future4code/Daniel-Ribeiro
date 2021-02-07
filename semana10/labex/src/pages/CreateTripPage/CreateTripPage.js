@@ -5,6 +5,8 @@ import {
   ContainerApplicationForm,
   Form,
   ContainerItemForm,
+  ContainerBtn,
+  BtnApplication
 } from '../RegisterPage/style'
 import useForm from "../../Hooks/useForm";
 import axios from "axios";
@@ -45,7 +47,7 @@ const CreateTripPage = () => {
   return (
     <ContainerApplicationForm>
     <ContainerForm>
-      <h2>Inscreva-se</h2>
+      <h2>Criar viagens</h2>
       <Form onSubmit={createTrip}>
         <ContainerItemForm>
           <input 
@@ -113,7 +115,10 @@ const CreateTripPage = () => {
           </select>
         </ContainerItemForm>
 
-        <button type='submit'>Inscrever</button>
+        <ContainerBtn>
+          <BtnApplication type='submit'>Criar</BtnApplication>
+        </ContainerBtn>
+       
       </Form>
     </ContainerForm>
   </ContainerApplicationForm>

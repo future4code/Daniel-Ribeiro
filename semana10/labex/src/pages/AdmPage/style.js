@@ -73,5 +73,8 @@ export const BtnNav = styled.button`
     font-size: 1.2em;
     padding: 5px 10px;
 
+    &:focus{
+        outline: none;
+    }
     
 `
