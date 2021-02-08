@@ -13,6 +13,12 @@ export const ContainerLogin = styled.div`
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
+
+    @media(max-width: 768px){
+        height: 100vh;
+        background-size: cover;
+    }
+
 `
 
 export const ContainerMainLogin = styled.div`
@@ -28,6 +34,14 @@ export const ContainerMainLogin = styled.div`
     border-radius: 10px;
     background-color: #100e0e54;
     box-shadow: 0 0 10px white;
+
+    @media(max-width: 768px){
+        padding: 15px;
+    }
+`
+
+export const H1 = styled.h1`
+    margin: 0 0 10px 0;
 `
 
 export const ContainerInputLogin = styled.div`

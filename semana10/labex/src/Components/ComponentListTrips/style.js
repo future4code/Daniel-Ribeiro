@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const BoxListTrip = styled.div`
-    /* position: relative; */
     width: 90%;
     margin-top: 150px;
     margin-bottom: 50px;
@@ -18,7 +17,6 @@ export const ContainerItem = styled.div`
     background: #000000b5;
     border-radius: 5px;
     color: white;
-    backdrop-filter: blur(5px);
     box-shadow: 0 0 10px;
 `
 
@@ -54,6 +52,20 @@ export const Btn = styled.button`
 
     &:focus{
         outline: none;
+    }
+
+    @media(max-width: 768px){
+        &:hover{
+            font-size: 1.2em;
+        }
+    }
+
+    @media(max-width: 425px){
+        &:hover{
+            font-size: 1em;
+        }
+
+        font-size: 1em;
     }
 `
 

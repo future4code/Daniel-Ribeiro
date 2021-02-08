@@ -6,6 +6,8 @@ export const ContainerApplicationForm = styled.div`
     width: 100%;
     height: 100vh;
     flex-direction: column;
+    align-items: end;
+    justify-content: center;
     background-color: #0c1626;
     background-image: url(${BackgroundApplication});
     background-size: 45%;
@@ -22,14 +24,28 @@ export const ContainerForm = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    top: 130px;
-    left: 100px;
+    margin-top: 100px;
+    margin-left: 50px;
 
     h2{
         margin: 0 0 40px 0; 
         color: white;
         font-size: 2em;
+
+        @media(max-width: 375px){
+        margin-bottom: 15px;
+        font-size: 1.6em;
+    }
+    }
+
+    @media(max-width: 425px){
+        width: 90%;
+        margin: 25px auto;
+        margin-top: 150px;
+    }
+
+    @media(max-width: 375px){
+        height: 75vh;
     }
 `
 
@@ -39,13 +55,22 @@ export const Form = styled.form`
     align-items: center;
     justify-content: space-between;
     height: 70%;
-    /* width: 100%; */
+
+    @media(max-width: 375px){
+        width: 100%;
+        height: 100%;
+    }
 `
 
 export const ContainerItemForm = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media(max-width: 375px){
+        flex-direction: column;
+        align-items: center;
+    }
 
     input{
         width: 270px;
@@ -62,6 +87,11 @@ export const ContainerItemForm = styled.div`
         &:focus{
             outline: none;
         }
+
+        @media(max-width: 375px){
+            margin-left: 0;
+            margin: 5px 0;
+        }   
     }
 
     select{
@@ -71,6 +101,11 @@ export const ContainerItemForm = styled.div`
         border: 1px solid aqua;
         box-shadow: none;
         margin-left: 15px;
+
+        @media(max-width: 375px){
+        margin-left: 0;
+        margin: 5px 0;
+        } 
     }
 
     label{
@@ -86,6 +121,10 @@ export const ContainerBtn = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+
+    @media(max-width: 375px){
+        margin: 15px 0;
+    } 
 `
 
 export const BtnApplication = styled.button`

@@ -12,6 +12,10 @@ export const ContainerTripsList = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media(max-width: 768px){
+        background-repeat: repeat-y;
+    }
 `
 
 export const BtnBack = styled.button`

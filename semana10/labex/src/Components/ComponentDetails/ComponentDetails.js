@@ -7,10 +7,12 @@ import {
     ContainerBtn,
     Btn,
     Img,
-    BtnBack
+    BtnBack,
+    ImgBack
 } from '../ComponentDetails/style';
 import ApprovedImg from '../../img/approved.png';
 import ReprovedImg from '../../img/reproved.png'
+import ImgArrow from '../../img/arrow.png'
 
 const ComponentDetails = (props) => {
 
@@ -87,7 +89,7 @@ const ComponentDetails = (props) => {
             </ContainerMain>
 
 
-            <BtnBack onClick={props.goTolistTrip}>Voltar</BtnBack>
+            <BtnBack onClick={props.goTolistTrip}><ImgBack src={ImgArrow}/></BtnBack>
         </BoxDetailsTrip>
     )
 }

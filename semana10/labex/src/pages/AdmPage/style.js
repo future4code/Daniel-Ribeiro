@@ -4,11 +4,20 @@ import BackgroundImg from '../../img/backgroundAdmin.png'
 
 export const ContainerAdmin = styled.div`
     background-color: #0c1626;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
     background-image: url(${BackgroundImg});
     background-size: 30%;
     background-position: right bottom;
     background-repeat: no-repeat;
+
+    @media(max-width: 768px){
+        background-image: none;
+    }
+
+    @media(max-width: 425px){
+        background-image: none;
+    }
 `
 
 export const ContainerMainAdmin = styled.div`
@@ -18,12 +27,28 @@ export const ContainerMainAdmin = styled.div`
     h1{
         margin: 0;
     }
+
+    @media(max-width: 425px){
+        background-color: #0c1626;
+    }
 `
 
 export const ContainerCards = styled.div`
     display: flex;
     width: 60%;
     color: white;
+
+    @media(max-width: 768px){
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    @media(max-width: 425px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 export const Card = styled.div`
@@ -38,6 +63,15 @@ export const Card = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+
+    @media(max-width: 768px){
+        margin: 0 20px;
+        width: 300px;
+    }
+
+    @media(max-width: 425px){
+        margin: 15px 0;
+    }
 `
 
 export const ContainerImg = styled.div`

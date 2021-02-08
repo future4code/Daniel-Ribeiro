@@ -3,8 +3,10 @@ import { useHistory } from "react-router-dom";
 import { goToPage } from '../../Routes/Coordinator';
 import {
   ContainerHome,
+  ContainerMainHome,
   ContainerAstronauta, 
   ImgAstronauta, ContainerContent, 
+  H1,
   H2,
   ContainerBtnViagens,
   BtnViagens,
@@ -18,18 +20,18 @@ const HomePage = () => {
 
   return (
     <ContainerHome>
-      <div>
+      <ContainerMainHome>
         <ContainerAstronauta>
           <ImgAstronauta src={AstronautaHome}/>
         </ContainerAstronauta>
         <ContainerContent>
-          <h1>O Infinito te aguarda</h1>
+          <H1>O Infinito te aguarda</H1>
           <H2>Não perca tempo, embarque com a LabeX</H2>
           <ContainerBtnViagens>
             <BtnViagens onClick={() => goToPage(history, '/trips/details')}>Conheça nossas viagens</BtnViagens>
           </ContainerBtnViagens>
         </ContainerContent>
-      </div>
+      </ContainerMainHome>
     </ContainerHome>
   )
 };

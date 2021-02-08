@@ -31,7 +31,7 @@ const TripDetailsPage = () => {
       <ContainerItem>
         <p><strong>Nome:</strong> {trip.name}</p>
         <p><strong>Descrição:</strong> {trip.description}</p>
-        <p><strong>Planet:</strong> {trip.planet}</p>
+        <p><strong>Planeta:</strong> {trip.planet}</p>
       </ContainerItem>
 
     )

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import {
   ContainerInputLogin,
-  ContainerLogin, Input,
+  ContainerLogin,
+  H1,
+  Input,
   ContainerInputItem,
   ContainerBtn,
   ContainerMainLogin,
@@ -59,7 +61,7 @@ const LoginPage = () => {
   return (
     <ContainerLogin>
       <ContainerMainLogin>
-        <h1>Login</h1>
+        <H1>Login</H1>
         <ContainerInputLogin>
           <ContainerInputItem>
             <label>E-mail: </label>
