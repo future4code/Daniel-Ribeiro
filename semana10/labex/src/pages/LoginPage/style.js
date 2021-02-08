@@ -19,6 +19,9 @@ export const ContainerLogin = styled.div`
         background-size: cover;
     }
 
+    @media(max-width: 425px){
+        width: 100%;
+    }
 `
 
 export const ContainerMainLogin = styled.div`
@@ -30,13 +33,17 @@ export const ContainerMainLogin = styled.div`
     flex-direction: column;
     width: 450px;
     height: 45vh;
-    backdrop-filter: blur(2px);
     border-radius: 10px;
     background-color: #100e0e54;
     box-shadow: 0 0 10px white;
 
     @media(max-width: 768px){
         padding: 15px;
+    }
+
+    @media(max-width: 425px){
+        padding: 15px;
+        width: 300px;
     }
 `
 
@@ -50,6 +57,10 @@ export const ContainerInputLogin = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media(max-width: 425px){
+        width: 100%;
+    }
 `
 
 export const ContainerInputItem = styled.div`
@@ -63,6 +74,12 @@ export const ContainerInputItem = styled.div`
     label{
         font-size: 1.2em;
         font-weight: bold;
+    }
+
+    @media(max-width: 425px){
+        display: flex;
+        flex-direction: column;
+        height: auto;
     }
 `
 

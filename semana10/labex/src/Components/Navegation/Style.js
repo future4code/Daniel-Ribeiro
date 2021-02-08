@@ -65,7 +65,7 @@ export const BtnNav = styled.button`
     }
 
     @media(max-width: 768px){
-        font-size: 1.4em;
+        font-size: 1.2em;
         /* background: #000000b5; */
         border-radius: 5px;
     }
