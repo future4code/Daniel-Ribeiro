@@ -6,14 +6,14 @@ import requestLogin from '../../Services/requestLogin';
 import { TextField } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
-function Form() {
+function Form({valueBtnLogin, setValueBtnLogin}) {
 
     const [form, handleInputChange, clear] = useForm({email: '', password: ''})
     const history = useHistory()
 
     const onSubmitForm = (event) =>{
         event.preventDefault()
-        requestLogin(form, clear, history)
+        requestLogin(form, clear, history, setValueBtnLogin)
         console.log('form', form)
     }
 

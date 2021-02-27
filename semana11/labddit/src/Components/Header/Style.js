@@ -7,13 +7,20 @@ export const HeaderContainer = styled.div`
     background-color: ${primaryColor};
 
     display: flex;
+    justify-content: center;
+`
+
+export const HeaderItems = styled.div`
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 
 export const LogoContainer = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    margin-left: 30px;
 
     .title{
         margin: 0;
@@ -29,5 +36,14 @@ export const SearchContainer = styled.div`
 
     .search-input{
         width: 100%;
+    }
+`
+
+export const BtnLogin = styled.button`
+    border: none;
+    background-color: transparent;
+
+    &:focus{
+        outline: none;
     }
 `

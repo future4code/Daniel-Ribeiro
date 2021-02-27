@@ -7,13 +7,16 @@ import { goToRegister } from '../../Router/Coordinator'
 import useUnProtectedPage from '../../Hooks/useUnProtectedPage';
 
 
-function Login() {
+function Login({valueBtnLogin, setValueBtnLogin}) {
     const history = useHistory()
     useUnProtectedPage()
     return (
         <LoginContainer>
             <h1>Page login</h1>
-            <Form />
+            <Form 
+                valueBtnLogin={valueBtnLogin}
+                setValueBtnLogin={setValueBtnLogin}
+            />
             <RegisterBtnContainer>
                 <ButtonsForm
                     onClick={() => goToRegister(history)}
