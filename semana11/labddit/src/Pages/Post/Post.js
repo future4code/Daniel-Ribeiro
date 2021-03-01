@@ -28,7 +28,7 @@ function Post(){
             console.log('comentários request', res.data.post)
         })
         .catch((err) =>{
-            alert('Não foi possível pegar os comentários')
+            console.log('Não foi possível pegar os comentários')
         })
     }
 

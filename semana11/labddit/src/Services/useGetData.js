@@ -20,7 +20,7 @@ const useGetData = (initialState, endpoint) =>{
                 setPosts(res.data.posts)
             })
             .catch((err) =>{
-                alert('Não deu para pegar os posts')
+                console.log('Não deu para pegar os posts')
             })
         } 
         

@@ -14,7 +14,7 @@ const requestCreateCommit = (body, id, requestCommits, clear) =>{
         clear()
     })
     .catch((err) =>{
-        alert('Não foi possível comentar.')
+        console.log('Não foi possível comentar.')
     })
 }
 

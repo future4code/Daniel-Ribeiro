@@ -13,7 +13,7 @@ const requestCreatePost = (body, clear) =>{
         clear()
     })
     .catch((err) =>{
-        alert('Não foi possível criar o post!')
+        console.log('Não foi possível criar o post!')
     })
 }
 
