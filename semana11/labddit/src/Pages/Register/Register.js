@@ -2,7 +2,6 @@ import React from 'react';
 import { InputContainer } from '../../Components/Forms/Style';
 import { RegisterContainer } from './style'
 import InputForm from '../../Components/InputForm/InputForm';
-import { useState } from 'react';
 import ButtonsForm from '../../Components/ButtonsForms/ButtonsForm'
 import useForm from '../../Hooks/useForm';
 import requestSingUp from '../../Services/requestSingUp';

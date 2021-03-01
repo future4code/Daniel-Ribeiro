@@ -5,9 +5,11 @@ export const HeaderContainer = styled.div`
     width: 100%;
     height: 10vh;
     background-color: ${primaryColor};
-
     display: flex;
     justify-content: center;
+    box-shadow: 0 0 10px 1px;
+    position: fixed;
+    z-index: 999;
 `
 
 export const HeaderItems = styled.div`
@@ -15,6 +17,23 @@ export const HeaderItems = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .btnsRigth{
+        width: 300px;
+        display: flex;
+        justify-content: space-around;
+
+        #btnCreatePost{
+        color: white;
+        font-size: 1.2em;
+        display: ${(props) => props.url}
+        }
+
+        .btnLogin{
+        color: white;
+        font-size: 1.2em;
+        }
+    }
 `
 
 export const LogoContainer = styled.div`
@@ -39,11 +58,5 @@ export const SearchContainer = styled.div`
     }
 `
 
-export const BtnLogin = styled.button`
-    border: none;
-    background-color: transparent;
 
-    &:focus{
-        outline: none;
-    }
-`
+

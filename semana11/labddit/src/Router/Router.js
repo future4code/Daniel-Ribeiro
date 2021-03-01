@@ -7,7 +7,7 @@ import Register from "../Pages/Register/Register";
 import Error from '../Pages/Error/Error'
 import CreatePost from "../Pages/CreatePost/CreatePost";
 
-function Router ({valueBtnLogin, setValueBtnLogin}) {
+function Router ({valueBtnLogin, setValueBtnLogin/* , valueBtnCreatePost, setValueBtnCreatePost */}) {
     return (
         <Switch>
           <Route exact path="/">
@@ -22,7 +22,10 @@ function Router ({valueBtnLogin, setValueBtnLogin}) {
           </Route>
 
           <Route exact path="/posts">
-            <Posts />
+            <Posts 
+              /* valueBtnCreatePost={valueBtnCreatePost}
+              setValueBtnCreatePost={setValueBtnCreatePost} */
+            />
           </Route>
 
           <Route exact path="/post/:id">

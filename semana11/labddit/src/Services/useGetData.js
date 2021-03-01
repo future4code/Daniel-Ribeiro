@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import {BASE_URL} from '../Constants/Urls'
 
+const useGetData = (initialState, endpoint) =>{
 
-const useGetPost = () =>{
-
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState(initialState)
 
     useEffect(() =>{
-        getPosts()
-    },[])
+        getPosts(endpoint)
+    }, [endpoint])
 
-        const getPosts = () =>{
-            axios.get(`${BASE_URL}/posts`, {
+        const getPosts = (endpoint) =>{
+            axios.get(endpoint, {
                 headers: {
                     Authorization: localStorage.getItem('token')
                 }
@@ -28,5 +26,5 @@ const useGetPost = () =>{
         
     return [posts]
 }
-export default useGetPost;
+export default useGetData;
 

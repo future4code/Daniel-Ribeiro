@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../Constants/Urls'
 import { goToPosts } from '../Router/Coordinator'

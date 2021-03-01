@@ -4,16 +4,19 @@ export const CardPostBox = styled.div`
     width: calc(80% - 15px);
     max-width: 60%;
     min-height: 150px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 15px;
     margin: 10px;
     border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 15px -5px;
 
     p{
         padding: 0 15px;
+        line-height: 1.5;
     }
 
     div{
@@ -25,8 +28,22 @@ export const CardPostBox = styled.div`
     }
 `
 
+export const TimeAndUsernameContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+export const Title = styled.p`
+    font-size: 1.5em;
+`
+
+export const Content = styled.p`
+    font-size: 1.2em;
+`
+
 export const ItemPostContainer = styled.div`
-    height: 150px;
+    min-height: auto;
+    max-height: 150px;
     overflow-y: auto;
     width: 100%;
     text-align: justify;
@@ -37,7 +54,7 @@ export const FooterCardPostContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30px;
+    height: 50px;
 `
 
 export const BtnsVoteContainer = styled.div`
@@ -73,10 +90,5 @@ export const TopCardPostContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
-
-
-
-export const Title = styled.div`
-
+    margin-bottom: 15px;
 `

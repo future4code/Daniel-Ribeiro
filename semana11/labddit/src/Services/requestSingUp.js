@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
 import axios from 'axios'
 import {BASE_URL} from '../Constants/Urls'
-import { useHistory } from 'react-router-dom'
 import { goToPosts } from '../Router/Coordinator'
 
 
