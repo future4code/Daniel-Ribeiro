@@ -8,11 +8,11 @@ que são, respctivamente, o nome em si e o caminho do arquivo que está sendo ro
 
 //b) e c)
 
-/* const red = '\u001b[31m';
+const red = '\u001b[31m';
 const blue = '\u001b[34m';
 const reset = '\u001b[0m';
 
-const namePerson = process.argv[2];
+const namePerson = process.argv[2].toUpperCase();
 const age = Number(process.argv[3])
 
 if(isNaN(age)){
@@ -22,7 +22,7 @@ if(isNaN(age)){
 }
 else {
     console.log(`${blue}Olá, ${namePerson}, você tem ${age} anos. Em sete anos você terá ${age + 7}.`)
-} */
+} 
 
 
 
