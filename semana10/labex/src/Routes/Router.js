@@ -6,35 +6,57 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import CreateTripPage from '../pages/CreateTripPage/CreateTripPage';
 import RegisterPage from '../pages/RegisterPage/RegisterPage';
 import TripDetaislPage from '../pages/TripDetailsPage/TripDetailsPage';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import Nav from '../Components/Navegation/Navegation';
+import NavAdm from '../Components/Navegation/NavegationAdm';
+import NavUser from '../Components/Navegation/NavegationUser'
+import AdmPage from "../pages/AdmPage/AdmPage";
 
 
 export default function Router() {
-  return (
-    <BrowserRouter>
-      
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route  path={"/trips"}>
-          <ListTripsPage />
-        </Route>
-        <Route  path={"/login"}>
-          <LoginPage />
-        </Route>
-        <Route  path={"/details-trip"}>
-          <TripDetaislPage />
-        </Route>
-        <Route  path={"/create-trip"}>
-          <CreateTripPage />
-        </Route>
-        <Route  path={"/register"}>
-          <RegisterPage />
-        </Route>
-        {/* <Route>
-          <ErrorPage />
-        </Route> */}
-      </Switch>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <Nav />
+                    <HomePage />
+                </Route>
+
+                <Route path={"/trips/list"}>
+                    <NavAdm />
+                    <ListTripsPage />
+                </Route>
+
+                <Route path="/login">
+                    <Nav />
+                    <LoginPage />
+                </Route>
+
+                <Route path={"/trips/details"}>
+                    <NavUser />
+                    <TripDetaislPage />
+                </Route>
+
+                <Route path={"/trips/create"}>
+                    <NavAdm />
+                    <CreateTripPage />
+                </Route>
+
+                <Route path={"/application-form"}>
+                    <NavUser />
+                    <RegisterPage />
+                </Route>
+
+                <Route path={"/adm"}>
+                    <NavAdm />
+                    <AdmPage />
+                </Route>
+
+                <Route>
+                    <Nav />
+                    <ErrorPage />
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    );
 }
