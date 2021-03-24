@@ -1,0 +1,16 @@
+GET http://localhost:3003/actor/search-gender?gender=male;
+
+###
+
+POST http://localhost:3003/actor/create
+Content-Type: application/json
+
+{
+    "name": "Keanu Reeves",
+    "salary": 2000000,
+    "birthDate": "1964-09-10",
+    "gender": "male"
+}
+
+###
+
