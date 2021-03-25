@@ -1,4 +1,4 @@
-# Exercícios da aula 45
+# Exercícios da aula 46
 
 ## Primeiro exercício:
 
