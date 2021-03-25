@@ -1,4 +1,8 @@
-GET http://localhost:3003/actor/search-gender?gender=male;
+GET http://localhost:3003/actor/gender
+
+###
+
+GET http://localhost:3003/movie/search?name=matrix
 
 ###
 
@@ -13,4 +17,30 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "nome": "Matrix",
+    "sinopse": "Vivemos em um mundo dominado por máquinas e somos suas baterias.",
+    "lancamento": "1993-09-10",
+    "avaliacao": 8.9,
+    "cartaz": "1993-12-15"
+}
+
+###
+POST http://localhost:3003/actor/update
+Content-Type: application/json
+
+{
+    "id": 1,
+    "salary": 150000
+}
+
+###
+DELETE http://localhost:3003/actor/remove/7
+
+###
+GET http://localhost:3003/actor/search-gender/query-builder?gender=male
 

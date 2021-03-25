@@ -1,4 +1,4 @@
-import connection from "../../connection"
+import connection from "../../../connection"
 import { Request, Response } from 'express'
 
 
@@ -9,8 +9,8 @@ const getActorById = async (
     try {
  
         const result = await connection.raw(`
-           SELECT * FROM Actor
-           WHERE id = ${req.params.id}  
+           SELECT * FROM Movies
+             
        `)
  
        res.send(result[0])
