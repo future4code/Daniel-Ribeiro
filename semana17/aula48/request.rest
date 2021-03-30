@@ -1,7 +1,18 @@
+// selecionando user por nome
 GET http://localhost:3003/user/search?name=João
 
+//selecionando user pelo type
 ### 
 GET http://localhost:3003/user/cx
 
+// ordenando pelo type 
 ### 
 GET http://localhost:3003/user/order?type=type
+
+// paginando 
+### 
+GET http://localhost:3003/user?limit=4&page=1
+
+//juntando tudo
+### 
+GET http://localhost:3003/user/ex4?type=teacher&direction=asc&limit=10&page=1
