@@ -1,0 +1,40 @@
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "ju",
+    "nickname": "juliene",
+    "email": "juba@gmail.com"
+}
+
+### 
+GET http://localhost:3003/user/all
+
+###
+GET http://localhost:3003/user/2
+
+###
+GET http://localhost:3003/task/2
+
+###
+POST http://localhost:3003/user/edit/2
+Content-Type: application/json
+
+{
+    "name": "juliana",
+    "nickname": "juliene",
+    "email": "juba@gmail.com"
+}
+
+###
+
+PUT http://localhost:3003/task
+Content-Type: application/json
+
+{
+    "title": "Fazer compras",
+    "description": "ir ao mercado fazer a compra da semana",
+    "limitDate": "30/03/2021",
+    "status": "to do",
+    "creatorUserId": 1
+}
