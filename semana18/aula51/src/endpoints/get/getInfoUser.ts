@@ -7,8 +7,12 @@ const getInfoUser = async (req: Request, res: Response) => {
     try {
         const token = req.headers.authorization as string;
 
-        const authenticationData = getData(token)
+        if(!token) throw new Error('Invalid token.')
 
+        const authenticationData = getData(token)
+        
+        if(authenticationData.type === 'ADMIM') throw new Error('Unauthorized')
+        
         const user = await getUserInfos(users, authenticationData.id)
         
         res.send({

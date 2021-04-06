@@ -3,9 +3,16 @@ export type user = {
     email: string,
     password: string,
     user_name: string,
-    nickname: string
+    nickname: string,
+    type: string
+}
+
+export enum type {
+    ADMIM = 'ADMIM',
+    NORMAL = 'NORMAL'
 }
 
 export type AuthenticationData = {
-    id: string
+    id: string,
+    type: string
 }
