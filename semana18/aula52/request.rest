@@ -32,3 +32,11 @@ Authorization: {{token}}
 
 ### 
 GET http://localhost:3003/user/profile/no-auth/39a0cca3-ca8a-419f-89c0-6e862d2f1758
+
+###
+POST http://localhost:3003/user/address
+Content-Type: application/json
+
+{
+    "cep": "41620250"
+}
