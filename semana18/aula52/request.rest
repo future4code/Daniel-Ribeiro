@@ -3,11 +3,14 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "email": "emicida@gmail.com",
-    "password": "emicida123",
-    "user_name": "emicida",
-    "nickname": "emicidio",
-    "type": "ADMIM"
+    "email": "manoBrown@gmail.com",
+    "password": "vidaloka",
+    "user_name": "Mano Brown",
+    "nickname": "VidaLoka",
+    "type": "ADMIM",
+    "cep": "41706820",
+    "numero_casa": "22",
+    "complemento": "A"
 }
 
 ### 
@@ -34,9 +37,13 @@ Authorization: {{token}}
 GET http://localhost:3003/user/profile/no-auth/39a0cca3-ca8a-419f-89c0-6e862d2f1758
 
 ###
+@token = {{login.response.body.token}}
 POST http://localhost:3003/user/address
 Content-Type: application/json
+Authorization: {{token}}
 
 {
-    "cep": "41620250"
+    "cep": "41620250",
+    "numero_casa": "22",
+    "complemento": ""
 }
