@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tables": "clear && ts-node-dev ./src/endpoints/createTables/createTables.ts",
+    "tables": "clear && ts-node-dev ./src/createTables/createTables.ts",
     "dev": "clear && ts-node-dev ./src/index.ts",
     "start": "clear && tsc && node ./build/index.js"
   },
