@@ -1,11 +1,11 @@
 import connection from '../../connection'
 
-const getUserByEmail = async (email: string, tableName: string) =>{
+const getUserInfos = async (value: string, condition:string, tableName: string) =>{
     try {
         const user = await connection.raw(`
             SELECT * 
             FROM ${tableName}
-            WHERE email = "${email}"
+            WHERE ${condition} = "${value}"
         `)
 
         return user[0]
@@ -13,4 +13,4 @@ const getUserByEmail = async (email: string, tableName: string) =>{
         throw new Error(error.message)
     }
 }
-export default getUserByEmail
+export default getUserInfos

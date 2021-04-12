@@ -3,7 +3,7 @@ import compareHash from '../functions/compareHash'
 import generateToken from '../functions/generateToken'
 import { verifyEmail } from '../functions/verifyEmail'
 import { verifyPassword } from '../functions/verifyPassword'
-import getUserByEmail from '../querys/gets/getUserByEmail'
+import getUserInfos from '../querys/gets/getUserInfos'
 import { users } from '../tableNames/tableNames'
 
 const login = async (req: Request, res: Response) => {
@@ -17,7 +17,7 @@ const login = async (req: Request, res: Response) => {
             password: password
         }
 
-        const user = await getUserByEmail(body.email, users)
+        const user = await getUserInfos(body.email, 'email', users)
 
         const comparePasswords = await compareHash(body.password, user[0].password)
 
