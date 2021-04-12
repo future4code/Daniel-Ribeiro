@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 🚀 Como executar
 * Clone o repositório:
 
-https://github.com/future4code/epps-labenu-system8
+https://github.com/future4code/Daniel-Ribeiro/pull/53
 
 * Instale as dependências com
 ```
@@ -45,6 +45,8 @@ DB_HOST = Coloque aqui seu endereço do banco de dados
 DB_USER = Coloque aqui seu usuário
 DB_PASSWORD = Coloque aqui sua senha
 DB_NAME = Coloque aqui o nome do banco de dados 
+JWT_KEY = Coloque aqui a sua chave para assinar os tokens
+BCRYPT_COST = Coloque aqui o cost de encriptação das senhas dos usuários.
  ```
 * Crie as tabelas com
  ```
@@ -56,5 +58,4 @@ npm run dev
  ```
  
  ## Desenvolvido por:
- - Bruno Vallim
  - [Daniel Ribeiro](https://www.linkedin.com/in/daniel-ribeiro-59b739140/)
