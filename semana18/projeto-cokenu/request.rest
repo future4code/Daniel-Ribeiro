@@ -2,7 +2,17 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Daniel Ribeiro",
+    "name": "Juliana Fajardini",
+    "email": "ju@gmail.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
     "email": "dan@gmail.com",
     "password": "123456"
 }
