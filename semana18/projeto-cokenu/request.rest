@@ -37,3 +37,8 @@ Authorization: {{token}}
     "title": "Bolo de cenoura",
     "description": "Massa do Bolo"
 }
+
+### 
+@token = {{login.response.body.token}}
+GET http://localhost:3003/recipe/2eda2023-ac68-426a-801f-f680e0ff85b7
+Authorization: {{token}}

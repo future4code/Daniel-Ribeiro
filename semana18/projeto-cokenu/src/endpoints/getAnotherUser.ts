@@ -1,5 +1,4 @@
 import {Request, Response} from 'express'
-import getData from '../functions/getData'
 import getUserInfos from '../querys/gets/getUserInfos'
 import { users } from '../tableNames/tableNames'
 

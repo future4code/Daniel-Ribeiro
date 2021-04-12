@@ -13,11 +13,6 @@ export type recipe = {
     user_id: string
 }
 
-export enum type {
-    ADMIM = 'ADMIM',
-    NORMAL = 'NORMAL'
-}
-
 export type AuthenticationData = {
     id: string,
 }

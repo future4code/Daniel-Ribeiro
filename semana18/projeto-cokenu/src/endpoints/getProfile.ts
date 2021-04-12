@@ -11,8 +11,6 @@ const getProfile = async (req: Request, res: Response) => {
 
         const user = await getUserInfos(authenticationData.id, 'id', users)
 
-        
-
         res.status(200).send({ 
             id: user[0].id,
             name: user[0].name,
