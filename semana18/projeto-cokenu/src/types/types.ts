@@ -1,10 +1,8 @@
 export type user = {
     id: string,
+    name: string,
     email: string,
     password: string,
-    user_name: string,
-    nickname: string,
-    type: string
 }
 
 export enum type {
