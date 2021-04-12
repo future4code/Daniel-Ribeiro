@@ -21,3 +21,8 @@ Content-Type: application/json
 @token = {{login.response.body.token}}
 GET http://localhost:3003/user/profile
 Authorization: {{token}}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/2e2b8043-1329-40f0-8045-cdf5544f1a4b
+Authorization: {{token}}
