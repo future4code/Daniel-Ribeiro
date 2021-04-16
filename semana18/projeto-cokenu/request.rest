@@ -1,0 +1,44 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Daniel Ribeiro",
+    "email": "dan@gmail.com",
+    "password": "123456"
+}
+
+###
+# @name login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "dan@gmail.com",
+    "password": "123456"
+}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/profile
+Authorization: {{token}}
+
+###
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/idDoUser
+Authorization: {{token}}
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/user/recipe
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title": "Hot dog",
+    "description": "Lavar bem as salsichas e colocá-las numa frigideira com água quente. Cortar o pão ao meio e levá-lo ao forno a 200 graus durante 1 minuto. Abrir o pão e colocar a salsicha. Colocar por cima o molho de tomate."
+}
+
+### 
+@token = {{login.response.body.token}}
+GET http://localhost:3003/recipe/idDaReceita
+Authorization: {{token}}
