@@ -1,0 +1,49 @@
+# @name signup
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "email": "manoBrown@gmail.com",
+    "password": "vidaloka",
+    "user_name": "Mano Brown",
+    "nickname": "VidaLoka",
+    "type": "ADMIM",
+    "cep": "41706820",
+    "numero_casa": "22",
+    "complemento": "A"
+}
+
+### 
+# @name login
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "froid@gmail.com",
+    "password": "friocomoaneve"
+}
+
+### 
+@token = {{login.response.body.token}}
+GET http://localhost:3003/user/profile
+Authorization: {{token}}
+
+###
+@token = {{login.response.body.token}}
+DELETE http://localhost:3003/user/remove/67a40836-4176-4ddd-932c-67372b193368
+Authorization: {{token}}
+
+### 
+GET http://localhost:3003/user/profile/no-auth/39a0cca3-ca8a-419f-89c0-6e862d2f1758
+
+###
+@token = {{login.response.body.token}}
+POST http://localhost:3003/user/address
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "cep": "41620250",
+    "numero_casa": "22",
+    "complemento": ""
+}
