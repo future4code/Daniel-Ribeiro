@@ -4,12 +4,12 @@ import { UserBusiness } from "../business/UserBusiness";
 import { BaseDatabase } from "../data/BaseDatabase";
 
 export class UserController {
-    async signup(req: Request, res: Response) {
+    public async signup(req: Request, res: Response) {
         try {
 
             const input: UserInputDTO = {
                 email: req.body.email,
-                name: req.body.name,
+                user_name: req.body.name,
                 password: req.body.password,
                 role: req.body.role
             }
@@ -26,7 +26,7 @@ export class UserController {
         await BaseDatabase.destroyConnection();
     }
 
-    async login(req: Request, res: Response) {
+    public async login(req: Request, res: Response) {
 
         try {
 

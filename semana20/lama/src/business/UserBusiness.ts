@@ -6,7 +6,7 @@ import { Authenticator } from "../services/Authenticator";
 
 export class UserBusiness {
 
-    async createUser(user: UserInputDTO) {
+    public async createUser(user: UserInputDTO) {
 
         const idGenerator = new IdGenerator();
         const id = idGenerator.generate();
@@ -15,7 +15,7 @@ export class UserBusiness {
         const hashPassword = await hashManager.hash(user.password);
 
         const userDatabase = new UserDatabase();
-        await userDatabase.createUser(id, user.email, user.name, hashPassword, user.role);
+        await userDatabase.createUser(id, user.email, user.user_name, hashPassword, user.role);
 
         const authenticator = new Authenticator();
         const accessToken = authenticator.generateToken({ id, role: user.role });
@@ -23,7 +23,7 @@ export class UserBusiness {
         return accessToken;
     }
 
-    async getUserByEmail(user: LoginInputDTO) {
+    public async getUserByEmail(user: LoginInputDTO) {
 
         const userDatabase = new UserDatabase();
         const userFromDB = await userDatabase.getUserByEmail(user.email);

@@ -3,12 +3,12 @@ import { User } from "../model/User";
 
 export class UserDatabase extends BaseDatabase {
 
-  private static TABLE_NAME = "";
+  private static TABLE_NAME = "USER_TABLE_LAMA";
 
   public async createUser(
     id: string,
     email: string,
-    name: string,
+    user_name: string,
     password: string,
     role: string
   ): Promise<void> {
@@ -17,7 +17,7 @@ export class UserDatabase extends BaseDatabase {
         .insert({
           id,
           email,
-          name,
+          user_name,
           password,
           role
         })
